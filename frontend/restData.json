@@ -1,0 +1,13 @@
+{
+  "registerUser": [
+    {
+      "fullname": "jhon jairo",
+      "email": "jjpulido8@misena.edu.co",
+      "password": "1234",
+      "id": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
