@@ -17,13 +17,26 @@ public class AccountController {
 
     @PutMapping("change/{role}")
     public ResponseEntity<?> changeRol(@AuthenticationPrincipal AccountPrincipal accountPrincipal, @PathVariable Role role){
-        accountService.changeRole(role, accountPrincipal.getUsername());
+        try {
+            if (role == null) {
+                throw new IllegalArgumentException("Invalid rol");
+            }
+            accountService.changeRole(role, accountPrincipal.getUsername());
 
-        return ResponseEntity.ok(true);
+            return ResponseEntity.ok(true);
+        }catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+
     }
 
     @GetMapping()
     public ResponseEntity<?> getCurrentAccount(@AuthenticationPrincipal AccountPrincipal accountPrincipal){
-        return new ResponseEntity<>(accountService.findByAccountReturnToken(accountPrincipal.getUsername()), HttpStatus.OK);
+        try {
+            return new ResponseEntity<>(accountService.findByAccountReturnToken(accountPrincipal.getUsername()), HttpStatus.OK);
+        }catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+
     }
 }

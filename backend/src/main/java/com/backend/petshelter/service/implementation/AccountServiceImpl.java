@@ -49,24 +49,36 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public Optional<Account> findByEmail(String email) {
+        if (email == null || email.isEmpty()) {
+            throw new IllegalArgumentException("Email cannot be empty");
+        }
         return accountRepository.findByEmail(email);
     }
 
     @Override
     public void updateAccount(Account account){
-
+        if (account == null) {
+            throw new IllegalArgumentException("Account cannot be null");
+        }
         accountRepository.save(account);
     }
     @Transactional
     @Override
     public void changeRole(Role udpdateRole, String account){
+        if (udpdateRole == null) {
+            throw new IllegalArgumentException("Role cannot be null");
+        }
+
+        if (account == null || account.isEmpty()) {
+            throw new IllegalArgumentException("Account cannot be null or empty");
+        }
         accountRepository.updateUserRole(account,udpdateRole);
     }
 
     @Override
     public Account findByAccountReturnToken(String account){
         Account email = accountRepository.findByEmail(account)
-                .orElseThrow(() -> new UsernameNotFoundException("El usuario no existe" + account));
+                .orElseThrow(() -> new UsernameNotFoundException("The account does not exist." + account));
         String jwt = jwtProvider.generateToken(email);
         email.setToken(jwt);
         return email;
