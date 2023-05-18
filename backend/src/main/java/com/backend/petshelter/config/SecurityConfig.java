@@ -50,7 +50,7 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests()
                 .requestMatchers(HttpMethod.PUT,"/api/user/change/**").hasAnyRole("USER","ADMIN")
-                .requestMatchers("/api/authentication/sign-in", "/api/authentication/sign-up").permitAll()
+                .requestMatchers("/api/authentication/sign-in", "/api/authentication/sign-up","/swagger-ui/**", "/v3/**").permitAll()
                 .anyRequest().authenticated();
 
         http.addFilterBefore(jwtAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
