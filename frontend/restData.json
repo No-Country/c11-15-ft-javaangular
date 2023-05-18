@@ -5,6 +5,12 @@
       "email": "jjpulido8@misena.edu.co",
       "password": "1234",
       "id": 1
+    },
+    {
+      "fullname": "@PulidoLasso",
+      "email": "jjpulido@misena.edu.co",
+      "password": "1234",
+      "id": 2
     }
   ],
   "profile": {

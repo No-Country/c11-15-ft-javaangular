@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Mascota } from 'src/app/models/pet.model';
 
 @Component({
   selector: 'app-home',

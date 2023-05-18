@@ -1,0 +1,5 @@
+<app-img *ngIf="mascota.images.length > 0" [img]="mascota.images[0]"></app-img>
+<h2>{{ mascota.price }}</h2>
+<p>{{ mascota.title }}</p>
+<button (click)="onShowDetail()">Ver detalle</button>
+<button (click)="onAddToCart()">Add cart</button>
