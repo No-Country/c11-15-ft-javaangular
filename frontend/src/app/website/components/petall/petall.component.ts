@@ -4,7 +4,7 @@ import {
   Mascota,
   UpdateMascota,
 } from 'src/app/models/pet.model';
-import { StoreService } from './../../services/store.service';
+import { StoreService } from '../../../services/store.service';
 import { PetallService } from 'src/app/services/petall.service';
 
 @Component({

@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user.model';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,36 +12,38 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  model = {
+    email: '',
+    password: '',
+  }
+  profile: User | null = null;
+
   public loginForm!: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private authService: AuthService,
   ){}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email:[''],
+      email:['', [Validators.required, Validators.email]],
       password:['']
     })
   }
 
   login(){
-    this.http.get<any>("http://localhost:5000/registerUser")
+    this.authService.loginAndGet(this.model.email, this.model.password)
     .subscribe(res=>{
-      const user = res.find((a:any)=>{
-        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-      });
-      if(user){
+      this.profile = res;
+      if(res.email === this.model.email && res.password === this.model.password){
         alert('Login exitoso');
         this.loginForm.reset();
         this.router.navigate(['home'])
-      } else {
-        alert('usuario no encontrado');
       }
-    },err=>{
-      alert('ocurrio un error' + err)
+    },error=>{
+      alert('ocurrio un error')
     })
   }
 }

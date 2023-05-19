@@ -1,9 +1,9 @@
-import { CategoriesService } from './../../services/categories.service';
+import { CategoriesService } from '../../../services/categories.service';
 import { Component, OnInit } from '@angular/core';
 
-import { StoreService } from '../../services/store.service'
-import { AuthService } from '../../services/auth.service';
-import { User } from '../../models/user.model';
+import { StoreService } from '../../../services/store.service'
+import { AuthService } from '../../../services/auth.service';
+import { User } from '../../../models/user.model';
 import { Category } from 'src/app/models/pet.model';
 
 @Component({
@@ -29,6 +29,10 @@ export class NavComponent implements OnInit {
       this.counter = products.length;
     });
     this.getAllCategories();
+    this.authService.user$
+    .subscribe(data => {
+      console.log(data)
+    })
   }
 
   toggleMenu() {

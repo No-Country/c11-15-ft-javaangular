@@ -6,22 +6,23 @@ import { SwiperModule } from 'swiper/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavComponent } from './components/nav/nav.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { NotfoundComponent } from './pages/notfound/notfound.component';
-import { HomeComponent } from './pages/home/home.component';
-import { ImgComponent } from './components/img/img.component';
-import { PetComponent } from './components/pet/pet.component';
-import { PetallComponent } from './components/petall/petall.component';
+import { NavComponent } from './website/components/nav/nav.component';
+import { LoginComponent } from './website/pages/login/login.component';
+import { RegisterComponent } from './website/pages/register/register.component';
+import { NotfoundComponent } from './website/pages/notfound/notfound.component';
+import { HomeComponent } from './website/pages/home/home.component';
+import { ImgComponent } from './website/components/img/img.component';
+import { PetComponent } from './website/components/pet/pet.component';
+import { PetallComponent } from './website/components/petall/petall.component';
 import { TimeInterceptor } from './interceptors/time.interceptor';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { CookieService } from 'ngx-cookie-service';
-import { CategoryComponent } from './pages/category/category.component';
-import { MylistpetComponent } from './pages/mylistpet/mylistpet.component';
-import { RecoveryComponent } from './pages/recovery/recovery.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { PetDetailComponent } from './pages/pet-detail/pet-detail.component';
+import { CategoryComponent } from './website/pages/category/category.component';
+import { MylistpetComponent } from './website/pages/mylistpet/mylistpet.component';
+import { RecoveryComponent } from './website/pages/recovery/recovery.component';
+import { ProfileComponent } from './website/pages/profile/profile.component';
+import { PetDetailComponent } from './website/pages/pet-detail/pet-detail.component';
+import { LayoutComponent } from './website/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PetDetailComponent } from './pages/pet-detail/pet-detail.component';
     MylistpetComponent,
     RecoveryComponent,
     ProfileComponent,
-    PetDetailComponent
+    PetDetailComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

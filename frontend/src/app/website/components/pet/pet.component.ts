@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Mascota } from '../../models/pet.model';
+import { Mascota } from '../../../models/pet.model';
 
 @Component({
   selector: 'app-pet',
