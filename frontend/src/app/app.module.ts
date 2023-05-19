@@ -16,6 +16,7 @@ import { PetComponent } from './components/pet/pet.component';
 import { PetallComponent } from './components/petall/petall.component';
 import { TimeInterceptor } from './interceptors/time.interceptor';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     SwiperModule
   ],
   providers: [
+    CookieService,
     { provide: HTTP_INTERCEPTORS, useClass: TimeInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
