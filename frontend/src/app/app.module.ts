@@ -17,6 +17,11 @@ import { PetallComponent } from './components/petall/petall.component';
 import { TimeInterceptor } from './interceptors/time.interceptor';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { CookieService } from 'ngx-cookie-service';
+import { CategoryComponent } from './pages/category/category.component';
+import { MylistpetComponent } from './pages/mylistpet/mylistpet.component';
+import { RecoveryComponent } from './pages/recovery/recovery.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { PetDetailComponent } from './pages/pet-detail/pet-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,12 @@ import { CookieService } from 'ngx-cookie-service';
     HomeComponent,
     ImgComponent,
     PetComponent,
-    PetallComponent
+    PetallComponent,
+    CategoryComponent,
+    MylistpetComponent,
+    RecoveryComponent,
+    ProfileComponent,
+    PetDetailComponent
   ],
   imports: [
     BrowserModule,

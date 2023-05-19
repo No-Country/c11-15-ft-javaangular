@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
   CreateMascota,
   Mascota,
@@ -12,16 +12,14 @@ import { PetallService } from 'src/app/services/petall.service';
   templateUrl: './petall.component.html',
   styleUrls: ['./petall.component.scss'],
 })
-export class PetallComponent implements OnInit {
+export class PetallComponent {
   myStorePet: Mascota[] = [];
   total = 0;
 
-  mascotas: Mascota[] = [];
+  @Input() mascotas: Mascota[] = [];
+  @Output() loadMore = new EventEmitter();
   showProductDetail = false;
   petChosen: Mascota | null = null;
-
-  limit = 10;
-  offset = 0;
 
   statusDetail: 'loading' | 'success' | 'error' | 'init' = 'init';
 
@@ -30,14 +28,6 @@ export class PetallComponent implements OnInit {
     private petallService: PetallService
   ) {
     this.myStorePet = this.storeService.getStorePet();
-  }
-
-  ngOnInit(): void {
-    this.petallService.getPetByPage(8, 0).subscribe((data) => {
-      console.log(data);
-      this.mascotas = data;
-      this.offset += this.limit;
-    });
   }
 
   onAddToShoppingCart(mascota: Mascota) {
@@ -113,12 +103,7 @@ export class PetallComponent implements OnInit {
     }
   }
 
-  loadMore() {
-    this.petallService
-      .getPetByPage(this.limit, this.offset)
-      .subscribe((data) => {
-        this.mascotas = this.mascotas.concat(data);
-        this.offset += this.limit;
-      });
+  onloadMore() {
+    this.loadMore.emit()
   }
 }
