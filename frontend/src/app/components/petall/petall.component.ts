@@ -1,35 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateMascota, Mascota, UpdateMascota } from 'src/app/models/pet.model';
+import {
+  CreateMascota,
+  Mascota,
+  UpdateMascota,
+} from 'src/app/models/pet.model';
 import { StoreService } from './../../services/store.service';
 import { PetallService } from 'src/app/services/petall.service';
 
 @Component({
   selector: 'app-petall',
   templateUrl: './petall.component.html',
-  styleUrls: ['./petall.component.scss']
+  styleUrls: ['./petall.component.scss'],
 })
 export class PetallComponent implements OnInit {
-
   myStorePet: Mascota[] = [];
   total = 0;
 
   mascotas: Mascota[] = [];
   showProductDetail = false;
-  petChosen: Mascota = {
-    id: '',
-    price: 0,
-    images: [],
-    title: '',
-    description: '',
-    category: {
-      id: '',
-      name: ''
-    }
-  }
+  petChosen: Mascota | null = null;
 
   limit = 10;
   offset = 0;
 
+  statusDetail: 'loading' | 'success' | 'error' | 'init' = 'init';
 
   constructor(
     private storeService: StoreService,
@@ -39,12 +33,11 @@ export class PetallComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.petallService.getPetByPage(8, 0)
-    .subscribe(data => {
+    this.petallService.getPetByPage(8, 0).subscribe((data) => {
       console.log(data);
       this.mascotas = data;
       this.offset += this.limit;
-    })
+    });
   }
 
   onAddToShoppingCart(mascota: Mascota) {
@@ -53,64 +46,79 @@ export class PetallComponent implements OnInit {
     console.log(mascota);
   }
 
-  toggleProductDetail(){
+  toggleProductDetail() {
     this.showProductDetail = !this.showProductDetail;
   }
 
-  onShowDetail(id: string){
-    this.petallService.getPet(id)
-    .subscribe(data =>{
-      console.log(data)
-      this.toggleProductDetail();
-      this.petChosen = data;
-    })
+  onShowDetail(id: string) {
+    this.statusDetail = 'loading';
+    this.toggleProductDetail();
+    this.petallService.getPet(id).subscribe(
+      (data) => {
+        console.log(data);
+        this.petChosen = data;
+        this.statusDetail = 'success';
+      },
+      (errorMsg) => {
+        window.alert(errorMsg);
+        this.statusDetail = 'error';
+      }
+    );
   }
 
   createNewProduct() {
     const pet: CreateMascota = {
       title: 'nueva mascota',
       description: 'ingrsando una nueva mascota',
-      images: ['https://cdn.shopify.com/s/files/1/0095/4253/3179/files/mobile-banne_-new.jpg?v=1614330110'],
+      images: [
+        'https://cdn.shopify.com/s/files/1/0095/4253/3179/files/mobile-banne_-new.jpg?v=1614330110',
+      ],
       price: 1200,
-      categoryId: 2
-    }
-    this.petallService.create(pet)
-    .subscribe(data =>{
+      categoryId: 2,
+    };
+    this.petallService.create(pet).subscribe((data) => {
       console.log('created', data);
       this.mascotas.unshift(data);
-    })
+    });
   }
 
   updateMascota() {
-    const changes: UpdateMascota = {
-      title: 'mascota actualizada',
-      description: 'esta mascota fue actulizada jejejejeej'
+    if (this.petChosen) {
+      const changes: UpdateMascota = {
+        title: 'mascota actualizada',
+        description: 'esta mascota fue actulizada jejejejeej',
+      };
+      const id = this.petChosen?.id;
+      this.petallService.update(id, changes).subscribe((data) => {
+        console.log('update', data);
+        const mascotaIndex = this.mascotas.findIndex(
+          (item) => item.id === this.petChosen?.id
+        );
+        this.mascotas[mascotaIndex] = data;
+        this.petChosen = data;
+      });
     }
-    const id = this.petChosen.id;
-    this.petallService.update(id, changes)
-    .subscribe(data =>{
-      console.log('update', data);
-      const mascotaIndex = this.mascotas.findIndex(item => item.id === this.petChosen.id);
-      this.mascotas[mascotaIndex] = data;
-      this.petChosen = data;
-    });
   }
 
   deletePet() {
-    const id = this.petChosen.id;
-    this.petallService.delete(id)
-    .subscribe(() => {
-      const mascotaIndex = this.mascotas.findIndex(item => item.id === this.petChosen.id);
-      this.mascotas.splice(mascotaIndex, 1);
-      this.showProductDetail = false;
-    })
+    if (this.petChosen) {
+      const id = this.petChosen?.id;
+      this.petallService.delete(id).subscribe(() => {
+        const mascotaIndex = this.mascotas.findIndex(
+          (item) => item.id === this.petChosen?.id
+        );
+        this.mascotas.splice(mascotaIndex, 1);
+        this.showProductDetail = false;
+      });
+    }
   }
 
   loadMore() {
-    this.petallService.getPetByPage(this.limit, this.offset)
-    .subscribe(data => {
-      this.mascotas = this.mascotas.concat(data);
-      this.offset += this.limit;
-    });
+    this.petallService
+      .getPetByPage(this.limit, this.offset)
+      .subscribe((data) => {
+        this.mascotas = this.mascotas.concat(data);
+        this.offset += this.limit;
+      });
   }
 }

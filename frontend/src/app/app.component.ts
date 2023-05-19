@@ -10,9 +10,10 @@ export class AppComponent {
   imgParent = '';
   showImg = true;
   token = '';
+  imgRta = '';
 
   constructor(
-    private usersService: UsersService
+    private usersService: UsersService,
   ) {
 
   }
@@ -29,8 +30,8 @@ export class AppComponent {
   createUser() {
     this.usersService.create({
       name: 'Sebas',
-      email: 'sebas@mail.com',
-      password: '1212'
+      email: 'sebas1@mail.com',
+      password: '11212'
     })
     .subscribe(rta => {
       console.log(rta);

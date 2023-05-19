@@ -27,14 +27,7 @@ export class AuthService {
   }
 
   getProfile() {
-    // const headers = new HttpHeaders();
-    // headers.set('Authorization',  `Bearer ${token}`);
-    return this.http.get<User>(`${this.apiUrl}/profile`, {
-      // headers: {
-      //   Authorization: `Bearer ${token}`,
-      //   // 'Content-type': 'application/json'
-      // }
-    });
+    return this.http.get<User>(`${this.apiUrl}/profile`);
   }
 
   loginAndGet(email: string, password: string) {

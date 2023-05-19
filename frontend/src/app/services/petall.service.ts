@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { CreateMascota, Mascota, UpdateMascota } from '../models/pet.model';
-import { retry } from 'rxjs';
+import { retry, catchError, map } from 'rxjs/operators';
+import { throwError, zip } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -27,8 +28,29 @@ export class PetallService {
     );
   }
 
-  getPet(id:string) {
+  fetchReadAndUpdate(id: string, dto: UpdateMascota) {
+    return zip(
+      this.getPet(id),
+      this.update(id, dto)
+    );
+  }
+
+  getPet(id: string) {
     return this.http.get<Mascota>(`${this.apiUrl}/${id}`)
+    .pipe(
+      catchError((error: HttpErrorResponse) => {
+        if (error.status === HttpStatusCode.Conflict) {
+          return throwError('Algo esta fallando en el server');
+        }
+        if (error.status === HttpStatusCode.NotFound) {
+          return throwError('El producto no existe');
+        }
+        if (error.status === HttpStatusCode.Unauthorized) {
+          return throwError('No estas permitido');
+        }
+        return throwError('Ups algo salio mal');
+      })
+    )
   }
 
   getPetByPage(limit: number, offset: number) {

@@ -1,8 +1,7 @@
-<button (click)="createNewProduct()">create</button>
 <div class="products--grid">
   <app-pet [mascota]="mascota" *ngFor="let mascota of mascotas" (addedProduct)="onAddToShoppingCart($event)"
     (showdProduct)="onShowDetail($event)"></app-pet>
-    <button (click)="loadMore()">Load More</button>
+  <button (click)="loadMore()">Load More</button>
 </div>
 <div class="product-detail" [class.active]="showProductDetail">
   <div *ngIf="petChosen">
