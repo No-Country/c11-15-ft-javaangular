@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Mascota } from 'src/app/models/pet.model';
+import { CreateMascota, Mascota, UpdateMascota } from 'src/app/models/pet.model';
 import { StoreService } from './../../services/store.service';
 import { PetallService } from 'src/app/services/petall.service';
 
@@ -24,8 +24,12 @@ export class PetallComponent implements OnInit {
     category: {
       id: '',
       name: ''
+    }
   }
-}
+
+  limit = 10;
+  offset = 0;
+
 
   constructor(
     private storeService: StoreService,
@@ -35,10 +39,11 @@ export class PetallComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.petallService.getAllPetAll()
+    this.petallService.getPetByPage(8, 0)
     .subscribe(data => {
       console.log(data);
       this.mascotas = data;
+      this.offset += this.limit;
     })
   }
 
@@ -59,5 +64,53 @@ export class PetallComponent implements OnInit {
       this.toggleProductDetail();
       this.petChosen = data;
     })
+  }
+
+  createNewProduct() {
+    const pet: CreateMascota = {
+      title: 'nueva mascota',
+      description: 'ingrsando una nueva mascota',
+      images: ['https://cdn.shopify.com/s/files/1/0095/4253/3179/files/mobile-banne_-new.jpg?v=1614330110'],
+      price: 1200,
+      categoryId: 2
+    }
+    this.petallService.create(pet)
+    .subscribe(data =>{
+      console.log('created', data);
+      this.mascotas.unshift(data);
+    })
+  }
+
+  updateMascota() {
+    const changes: UpdateMascota = {
+      title: 'mascota actualizada',
+      description: 'esta mascota fue actulizada jejejejeej'
+    }
+    const id = this.petChosen.id;
+    this.petallService.update(id, changes)
+    .subscribe(data =>{
+      console.log('update', data);
+      const mascotaIndex = this.mascotas.findIndex(item => item.id === this.petChosen.id);
+      this.mascotas[mascotaIndex] = data;
+      this.petChosen = data;
+    });
+  }
+
+  deletePet() {
+    const id = this.petChosen.id;
+    this.petallService.delete(id)
+    .subscribe(() => {
+      const mascotaIndex = this.mascotas.findIndex(item => item.id === this.petChosen.id);
+      this.mascotas.splice(mascotaIndex, 1);
+      this.showProductDetail = false;
+    })
+  }
+
+  loadMore() {
+    this.petallService.getPetByPage(this.limit, this.offset)
+    .subscribe(data => {
+      this.mascotas = this.mascotas.concat(data);
+      this.offset += this.limit;
+    });
   }
 }
