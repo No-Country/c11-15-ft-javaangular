@@ -36,14 +36,15 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  login(){
-    this.authService.loginAndGet(this.model.email, this.model.password )
+  login(data: any){
+    console.log(data, 'hola')
+    this.authService.loginAndGet(data['email'], data['password'] )
     .subscribe(res=>{
       this.profile = res;
       if(res.email === this.model.email && res.password === this.model.password){
         alert('Login exitoso');
-        this.loginForm.reset();
         this.router.navigate(['home'])
+        this.loginForm.reset();
       }
     },error=>{
       alert('ocurrio un error')
