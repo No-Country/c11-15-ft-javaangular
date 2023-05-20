@@ -17,6 +17,12 @@ export class PetallComponent {
   total = 0;
 
   @Input() mascotas: Mascota[] = [];
+  @Input()
+  set petId(id: string | null ){
+    if (id) {
+      this.onShowDetail(id);
+    }
+  }
   @Output() loadMore = new EventEmitter();
   showProductDetail = false;
   petChosen: Mascota | null = null;

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
@@ -11,7 +11,6 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   model = {
     email: '',
     password: '',
@@ -29,12 +28,16 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email:['', [Validators.required, Validators.email]],
-      password:['']
+      password:['', [
+            Validators.required,
+            Validators.minLength(6),
+            Validators.maxLength(20)
+          ]]
     })
   }
 
   login(){
-    this.authService.loginAndGet(this.model.email, this.model.password)
+    this.authService.loginAndGet(this.model.email, this.model.password )
     .subscribe(res=>{
       this.profile = res;
       if(res.email === this.model.email && res.password === this.model.password){
