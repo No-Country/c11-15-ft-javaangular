@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -20,8 +21,9 @@ import java.util.UUID;
 @Table(name = "ACCOUNT")
 public class Account {
     @Id
-    private String uuid;
-    @Column(name = "email", nullable = false)
+    @Column(name = "account_uuid")
+    private String accountUuid;
+    @Column(name = "email", nullable = false, unique = true)
     @Email(message = "Please enter a Valid email!")
     private String email;
     @Column(name = "password", nullable = false)
@@ -35,11 +37,13 @@ public class Account {
     private LocalDateTime LastSessionDate;
     @Column(name = "active")
     private boolean active;
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL)
+    private AccountDetails accountDetails;
     @Transient
     private String token;
 
     public Account(String email, String password) {
-        this.uuid = UUID.randomUUID().toString();
+        this.accountUuid= UUID.randomUUID().toString();
         this.email = email;
         this.password = password;
         this.rol = Role.USER;
