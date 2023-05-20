@@ -25,7 +25,7 @@ public class AccountSecurityDetailsService implements UserDetailsService {
 
         return AccountPrincipal.builder()
                 .account(account)
-                .id(account.getUuid())
+                .id(account.getAccountUuid())
                 .email(email)
                 .password(account.getPassword())
                 .authorities(authorities)
