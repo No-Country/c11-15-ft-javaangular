@@ -13,6 +13,8 @@ import java.util.Optional;
 @Repository
 public interface AccountRepository extends JpaRepository<Account, String> {
     Optional<Account> findByEmail(String email);
+
+    Optional<Account> findByAccountUuid(String uuid);
     @Modifying
     @Query("update Account set rol=:rol where email=:email")
     void updateUserRole(@Param("email") String username, @Param("rol") Role rol);

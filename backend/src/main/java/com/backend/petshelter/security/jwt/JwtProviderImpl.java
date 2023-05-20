@@ -54,7 +54,7 @@ public class JwtProviderImpl implements JwtProvider{
         return Jwts.builder()
                 .setSubject(account.getEmail())
                 .claim("roles", account.getRol())
-                .claim("userId", account.getUuid())
+                .claim("userId", account.getAccountUuid())
                 .setExpiration(new Date(System.currentTimeMillis()+JWT_EXPIRATION_IN_MS))
                 .signWith(key, SignatureAlgorithm.HS512)
                 .compact();
