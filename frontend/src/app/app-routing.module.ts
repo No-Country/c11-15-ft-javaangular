@@ -27,18 +27,6 @@ const routes: Routes = [
         title: 'home',
       },
       {
-        path: 'login',
-        component: LoginComponent,
-        pathMatch: 'full',
-        title: 'login',
-      },
-      {
-        path: 'register',
-        component: RegisterComponent,
-        pathMatch: 'full',
-        title: 'register user',
-      },
-      {
         path: 'category/:id',
         component: CategoryComponent,
         pathMatch: 'full',
@@ -72,7 +60,19 @@ const routes: Routes = [
   },
   {
     path: 'cms',
-    loadChildren:() => import('./cms/cms.module').then(m => m.CmsModule)
+    loadChildren: () => import('./cms/cms.module').then(m => m.CmsModule),
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    pathMatch: 'full',
+    title: 'login',
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    pathMatch: 'full',
+    title: 'register user',
   },
   {
     path: '**',

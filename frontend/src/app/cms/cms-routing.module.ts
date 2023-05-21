@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/grid',
+        redirectTo: 'grid',
         pathMatch: 'full'
       },
       {
