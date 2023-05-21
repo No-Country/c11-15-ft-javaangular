@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
@@ -11,13 +11,13 @@ import { PetallService } from 'src/app/services/petall.service';
   templateUrl: './pet-detail.component.html',
   styleUrls: ['./pet-detail.component.scss']
 })
-export class PetDetailComponent {
-  petId: string | null = null;
+export class PetDetailComponent implements OnInit {
+  productId: string | null = null;
   mascota: Mascota | null = null;
 
   constructor(
     private route: ActivatedRoute,
-    private PetallService: PetallService,
+    private productsService: PetallService,
     private location: Location
   ) { }
 
@@ -25,9 +25,9 @@ export class PetDetailComponent {
     this.route.paramMap
       .pipe(
         switchMap((params) => {
-          this.petId = params.get('id');
-          if (this.petId) {
-            return this.PetallService.getPet(this.petId);
+          this.productId = params.get('id');
+          if (this.productId) {
+            return this.productsService.getOne(this.productId);
           }
           return [null];
         })

@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent {
 
-  mascotas: Mascota[] = [];
+  mascota: Mascota[] = [];
   limit = 10;
   offset = 0;
   petId: string | null = null;
@@ -22,8 +22,8 @@ export class HomeComponent {
 
 
   ngOnInit(): void {
-    this.petallService.getPetByPage(10, 0).subscribe((data) => {
-      this.mascotas = data;
+    this.petallService.getAll(10, 0).subscribe((data) => {
+      this.mascota = data;
       this.offset += this.limit;
     });
     this.route.queryParamMap.subscribe(params => {
@@ -34,9 +34,9 @@ export class HomeComponent {
 
   onLoadMore() {
     this.petallService
-      .getPetByPage(this.limit, this.offset)
+      .getAll(this.limit, this.offset)
       .subscribe((data) => {
-        this.mascotas = this.mascotas.concat(data);
+        this.mascota = this.mascota.concat(data);
         this.offset += this.limit;
       });
   }

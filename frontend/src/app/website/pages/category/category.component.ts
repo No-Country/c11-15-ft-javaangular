@@ -7,13 +7,14 @@ import { PetallService } from 'src/app/services/petall.service';
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent implements OnInit {
-  categoryId: string | null = null
+  categoryId: string | null = null;
   limit = 10;
   offset = 0;
-  mascotas: Mascota[] = [];
+  mascota: Mascota[] = [];
+  petId: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,7 +37,11 @@ export class CategoryComponent implements OnInit {
         })
       )
       .subscribe((data) => {
-        this.mascotas = data;
+        this.mascota = data;
+        this.route.queryParamMap.subscribe((params) => {
+          this.petId = params.get('product');
+          console.log(this.petId);
+        });
       });
   }
 
@@ -45,7 +50,7 @@ export class CategoryComponent implements OnInit {
       this.petallService
         .getByCategory(this.categoryId, this.limit, this.offset)
         .subscribe((data) => {
-          this.mascotas = this.mascotas.concat(data);
+          this.mascota = this.mascota.concat(data);
           this.offset += this.limit;
         });
     }

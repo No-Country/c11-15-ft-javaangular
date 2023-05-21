@@ -48,10 +48,11 @@ export class PetallComponent {
 
   onShowDetail(id: string) {
     this.statusDetail = 'loading';
-    this.toggleProductDetail();
-    this.petallService.getPet(id).subscribe(
+    if (!this.showProductDetail) {
+      this.showProductDetail = true;
+    }
+    this.petallService.getOne(id).subscribe(
       (data) => {
-        console.log(data);
         this.petChosen = data;
         this.statusDetail = 'success';
       },

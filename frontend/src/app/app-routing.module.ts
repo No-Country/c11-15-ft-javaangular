@@ -9,59 +9,70 @@ import { MylistpetComponent } from './website/pages/mylistpet/mylistpet.componen
 import { RecoveryComponent } from './website/pages/recovery/recovery.component';
 import { ProfileComponent } from './website/pages/profile/profile.component';
 import { PetDetailComponent } from './website/pages/pet-detail/pet-detail.component';
+import { LayoutComponent } from './website/layout/layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full',
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
+      },
+      {
+        path: 'home',
+        component: HomeComponent,
+        title: 'home',
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+        pathMatch: 'full',
+        title: 'login',
+      },
+      {
+        path: 'register',
+        component: RegisterComponent,
+        pathMatch: 'full',
+        title: 'register user',
+      },
+      {
+        path: 'category/:id',
+        component: CategoryComponent,
+        pathMatch: 'full',
+        title: 'categoria',
+      },
+      {
+        path: 'pet/:id',
+        component: PetDetailComponent,
+        pathMatch: 'full',
+        title: 'pet detail',
+      },
+      {
+        path: 'mylistpet',
+        component: MylistpetComponent,
+        pathMatch: 'full',
+        title: 'my list pet',
+      },
+      {
+        path: 'recovery',
+        component: RecoveryComponent,
+        pathMatch: 'full',
+        title: 'recovery',
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+        pathMatch: 'full',
+        title: 'profile',
+      },
+    ],
   },
   {
-    path: 'home',
-    component: HomeComponent,
-    title: 'home',
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    pathMatch: 'full',
-    title: 'login',
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    pathMatch: 'full',
-    title: 'register user',
-  },
-  {
-    path: 'category/:id',
-    component: CategoryComponent,
-    pathMatch: 'full',
-    title: 'categoria',
-  },
-    {
-    path: 'pet/:id',
-    component: PetDetailComponent,
-    pathMatch: 'full',
-    title: 'pet detail',
-  },
-  {
-    path: 'mylistpet',
-    component: MylistpetComponent,
-    pathMatch: 'full',
-    title: 'my list pet',
-  },
-  {
-    path: 'recovery',
-    component: RecoveryComponent,
-    pathMatch: 'full',
-    title: 'recovery',
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    pathMatch: 'full',
-    title: 'profile',
+    path: 'cms',
+    loadChildren:() => import('./cms/cms.module').then(m => m.CmsModule)
   },
   {
     path: '**',
@@ -73,6 +84,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
