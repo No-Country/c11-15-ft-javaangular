@@ -2,3 +2,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url(./styles/reset.css);
+@import '~swiper/css';
+
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.products--grid .app-img img {
+	 border-radius: 10px;
+   max-height: 200px;
+}

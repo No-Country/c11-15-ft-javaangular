@@ -1,0 +1,56 @@
+<div class="show-mobile">
+  <div>
+    <button (click)="toggleMenu()">
+      <img src="./assets/svg/icon_menu.svg" alt="menu">
+    </button>
+    <a href="">
+      <img src="./assets/svg/logo_yard_sale.svg" alt="logo">
+    </a>
+    <div class="cart">
+      <a href="">
+        <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+      </a>
+      <span class="counter">{{ counter }}</span>
+    </div>
+
+  </div>
+  <div class="side-menu" [class.active]="activeMenu">
+    <button (click)="toggleMenu()">Close</button>
+    <ul>
+      <li><a routerLink="home">All</a></li>
+      <li *ngFor="let item of categories">
+        <a [routerLink]="['/category', item.id]">{{ item.name }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="hide-mobile">
+  <div>
+    <nav>
+      <a class="logo" href="">
+        <img src="./assets/svg/logo_yard_sale.svg" alt="logo">
+      </a>
+      <ul>
+        <li><a routerLinkActive="active" routerLink="home">All</a></li>
+        <li *ngFor="let item of categories">
+          <a routerLinkActive="active" [routerLink]="['/category', item.id]">{{ item.name }}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="info">
+      <div class="account">
+        <button *ngIf="!profile; else elseBlock" [routerLink]="['/login']">Login</button>
+        <ng-template #elseBlock>
+          <a routerLink="/profile">{{ profile?.email }}</a>
+          <button (click)="logout()">Logout</button>
+        </ng-template>
+      </div>
+      <div class="cart">
+        <a href="">
+          <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+        </a>
+        <span class="counter">{{ counter }}</span>
+      </div>
+    </div>
+  </div>
+</div>
