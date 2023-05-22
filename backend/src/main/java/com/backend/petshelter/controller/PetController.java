@@ -1,5 +1,6 @@
 package com.backend.petshelter.controller;
 
+
 import com.backend.petshelter.dto.PetDTO;
 import com.backend.petshelter.model.Pet;
 import com.backend.petshelter.service.implementation.PetService;
@@ -19,8 +20,8 @@ public class PetController {
     private PetService petService;
 
     @GetMapping
-    public ResponseEntity<List<PetDTO>> getAllActive(){
-        List<PetDTO> listPet = petService.findByActivoTrue();
+    public ResponseEntity<List<Pet>> getAllActive(){
+        List<Pet> listPet = petService.findByActivoTrue();
         return new ResponseEntity<>(listPet,HttpStatus.OK);
     }
 
@@ -31,16 +32,16 @@ public class PetController {
     }
     @PostMapping
     @Transactional
-    public ResponseEntity<PetDTO>createPet(@RequestBody @Valid PetDTO petDTO){
-        PetDTO pet1 = petService.createPet(petDTO);
-       return new ResponseEntity<>(pet1, HttpStatus.OK);
+    public ResponseEntity<Pet>createPet(@RequestBody @Valid Pet pet){
+        Pet petCreada = petService.createPet(pet);
+       return new ResponseEntity<>(petCreada, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity<PetDTO>updatePet(@PathVariable Long id, @RequestBody PetDTO pet){
-        PetDTO petDTO = petService.update(id,pet);
-        return new ResponseEntity<>(petDTO,HttpStatus.OK);
+    public ResponseEntity<PetDTO>updatePet(@PathVariable Long id, @RequestBody @Valid PetDTO pet){
+        PetDTO petEditada = petService.update(id,pet);
+        return new ResponseEntity<>(petEditada,HttpStatus.OK);
     }
 
         @DeleteMapping("/{id}")
