@@ -10,7 +10,7 @@
   font-family: 'Quicksand', sans-serif;
 }
 
-.products--grid .app-img img {
+products--grid app-img img {
 	 border-radius: 10px;
    max-height: 200px;
 }
