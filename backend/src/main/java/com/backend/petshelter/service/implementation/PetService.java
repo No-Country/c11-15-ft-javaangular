@@ -33,7 +33,7 @@ public class PetService implements IpetService {
     }
 
     @Override
-    public List<Pet> findByActivoTrue() {
+    public List<PetDTO> findByActivoTrue() {
         List<Pet>listPet = petRepostory.findByActivoTrue();
         List<PetDTO>petDTOList = listPet.stream()
                 .map(pet -> {
@@ -41,7 +41,7 @@ public class PetService implements IpetService {
                     pet.setId(pet.getId());
                     return petDTO;
                 }).collect(Collectors.toList());
-        return listPet;
+        return petDTOList;
     }
 
     @Override

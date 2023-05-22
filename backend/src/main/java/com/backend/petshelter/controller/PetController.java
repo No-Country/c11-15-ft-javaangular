@@ -19,8 +19,8 @@ public class PetController {
     private PetService petService;
 
     @GetMapping
-    public ResponseEntity<List<Pet>> getAllActive(){
-        List<Pet> listPet = petService.findByActivoTrue();
+    public ResponseEntity<List<PetDTO>> getAllActive(){
+        List<PetDTO> listPet = petService.findByActivoTrue();
         return new ResponseEntity<>(listPet,HttpStatus.OK);
     }
 
