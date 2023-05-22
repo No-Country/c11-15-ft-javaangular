@@ -9,7 +9,7 @@ public interface IpetService{
     public PetDTO createPet(PetDTO pet);
     public PetDTO update(Long id, PetDTO pet);
     public List<Pet>getAll();
-     public List<Pet> findByActivoTrue();
+     public List<PetDTO> findByActivoTrue();
 
      public void delete(Long id);
 
