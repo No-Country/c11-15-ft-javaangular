@@ -11,6 +11,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { PetDetailComponent } from './pages/pet-detail/pet-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 
+import { AuthGuard } from '../guards/auth.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -52,6 +54,7 @@ const routes: Routes = [
       },
       {
         path: 'profile',
+        canActivate: [ AuthGuard ],
         component: ProfileComponent,
         pathMatch: 'full',
         title: 'profile',
