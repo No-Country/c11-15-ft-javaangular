@@ -1,7 +1,6 @@
 import { UsersService } from './../../../services/users.service';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
@@ -18,13 +17,7 @@ export class RegisterComponent implements OnInit {
       password: '',
     }
 
-  private apiUrl = `${environment.API_URL}/api/user`;
-
-  public register!: FormGroup;
-
   constructor(
-    private formBuilder: FormBuilder,
-    private http: HttpClient,
     private router: Router,
     private usersService: UsersService,
   ) {}
@@ -32,14 +25,14 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  registerUser(){
-    this.usersService.create(this.model)
+  registerUser(data: any){
+    console.log(data.value);
+    this.usersService.create(data.value)
     .subscribe(res => {
       alert("registrado exitosamente");
-      this.register.reset();
       this.router.navigate(['login']);
     },err=>{
-      alert(this.register.contains.arguments)
+      alert('ocurrio un error')
     })
     /* this.http.post<any>(this.apiUrl, this.register.value)
     .subscribe(res => {
@@ -51,3 +44,5 @@ export class RegisterComponent implements OnInit {
     }) */
   }
 }
+
+
