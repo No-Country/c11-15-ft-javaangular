@@ -3,6 +3,7 @@ package com.backend.petshelter.config;
 import com.backend.petshelter.security.AccountSecurityDetailsService;
 import com.backend.petshelter.security.jwt.JwtAuthorizationFilter;
 import com.backend.petshelter.util.enums.Role;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,6 +29,11 @@ public class SecurityConfig {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+
+    @Bean
+    public ModelMapper modelMapper(){
+        return new ModelMapper();
+    }
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception{

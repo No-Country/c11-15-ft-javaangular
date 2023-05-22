@@ -1,5 +1,7 @@
 package com.backend.petshelter.controller;
 
+
+import com.backend.petshelter.dto.PetDTO;
 import com.backend.petshelter.model.Pet;
 import com.backend.petshelter.service.implementation.PetService;
 import jakarta.validation.Valid;
@@ -25,29 +27,28 @@ public class PetController {
 
     @GetMapping("/all")
     public ResponseEntity<List<Pet>> getAll(){
-        List<Pet> listPet = petService.getAll();
-        return new ResponseEntity<>(listPet,HttpStatus.OK);
+            List<Pet>petList= petService.getAll();
+        return new ResponseEntity<>(petList,HttpStatus.OK);
     }
     @PostMapping
     @Transactional
     public ResponseEntity<Pet>createPet(@RequestBody @Valid Pet pet){
         Pet petCreada = petService.createPet(pet);
-        return new ResponseEntity<>(petCreada,HttpStatus.CREATED);
+       return new ResponseEntity<>(petCreada, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity<Pet>updatePet(@PathVariable Long id, @RequestBody Pet pet){
-        Pet petEditada = petService.update(id,pet);
+    public ResponseEntity<PetDTO>updatePet(@PathVariable Long id, @RequestBody @Valid PetDTO pet){
+        PetDTO petEditada = petService.update(id,pet);
         return new ResponseEntity<>(petEditada,HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
-    @Transactional
-    public ResponseEntity<Void>deletePet(@PathVariable Long id){
+        @DeleteMapping("/{id}")
+        @Transactional
+        public ResponseEntity<Void>deletePet(@PathVariable Long id){
         petService.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
-
+        }
 
 }
