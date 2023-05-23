@@ -21,3 +21,7 @@ Puedes acceder a la Test Suite del módulo de Login/Registro en el siguiente enl
 ## Test Suite Home
 
 Puedes acceder a la Test Suite del módulo Home en el siguiente enlace: [Test Suite Home](https://docs.google.com/spreadsheets/d/1ee3JDqWKFGD5WKgVyPvxCRNn4ztMeYqDgzwMWtWO5s0/edit?usp=sharing)
+
+## Test Suite Quiero Adoptar
+
+Puedes acceder a la Test Suite del módulo Quiero Adoptar en el siguiente enlace: [Test Suite Quiero Adoptar](https://docs.google.com/spreadsheets/d/1ZJgkZCVMgJbWbqYjKMESPdCf16N8m6La4inIdrk3FX4/edit?usp=sharing)
