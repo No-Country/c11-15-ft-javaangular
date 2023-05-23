@@ -3,18 +3,43 @@
     <img class="mx-auto h-30 w-auto" src="../../../assets/images/logo2.png" alt="Your Company">
     <h2 class="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-[#00A19D]">Bienvenido de nuevo</h2>
   </div>
-
+<!-- formulario -->
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
     <form class="space-y-6" #f="ngForm" (ngSubmit)="f.form.valid && login(f.value)" novalidate>
+      <!-- entrada para el correo con validaciones y regex -->
       <div>
         <label for="email" class="block text-sm font-medium leading-6 text-gray-900"></label>
         <div class="mt-2">
-          <input [(ngModel)]="model.email" id="email" name="email" type="email" placeholder="  Ingresa tu correo"
-            autocomplete="email"
-            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-
+          <input [(ngModel)]="model.email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="email"
+            type="email" placeholder="  Ingresa tu correo" ngModel autocomplete="email" #emailref="ngModel" required
+            class="form-control block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          <div *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)" class="alert alert-danger">
+            <div *ngIf="emailref.errors['required']" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              <strong class="font-bold">El correo es requerido</strong>
+              <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20">
+                  <title>Close</title>
+                  <path
+                    d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                </svg>
+              </span>
+            </div>
+            <div [hidden]="!emailref.errors?.['pattern']" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              <strong class="font-bold">El correo es invalidado</strong>
+              <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20">
+                  <title>Close</title>
+                  <path
+                    d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                </svg>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
+      <!-- entrada de contraseña con validacion -->
       <div>
         <div class="flex items-center justify-between">
           <label for="password" class="block text-sm font-medium leading-6 text-gray-900"></label>
@@ -22,15 +47,40 @@
             <a class="font-semibold text-[#FFB344] hover:text-indigo-500">Olvide la contraseña?</a>
           </div>
         </div>
+        <!-- contraseña -->
         <div class="mt-2">
           <input [(ngModel)]="model.password" id="password" placeholder="  ingresa tu conseña" name="password"
-            type="password" autocomplete="current-password" required
-            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            type="password" autocomplete="current-password" required minlength="4" ngModel #passref="ngModel"
+            class="form-control block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
         </div>
+        <div *ngIf="passref.errors &&(passref.touched || passref.dirty)" class="alert alert-danger">
+            <div *ngIf="passref.errors['required']" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              <strong class="font-bold">La contraseña es requerida</strong>
+              <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20">
+                  <title>Close</title>
+                  <path
+                    d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                </svg>
+              </span>
+            </div>
+            <div [hidden]="!passref.errors?.['minlength']" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              <strong class="font-bold">La contraseña debe ser minimo 4 digitos</strong>
+              <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20">
+                  <title>Close</title>
+                  <path
+                    d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                </svg>
+              </span>
+            </div>
+          </div>
       </div>
 
       <div>
-        <button type="submit"
+        <button type="submit" [disabled]="f.invalid"
           class="flex w-full justify-center rounded-md bg-[#FFB344] px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-yellow-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">continuar
         </button>
       </div>
