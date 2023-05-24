@@ -2,15 +2,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-@import url(./styles/reset.css);
-@import '~swiper/css';
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("./styles/reset.css");
+@import "~swiper/css";
 
 * {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
+  background: #FDFAF3;
 }
 
-products--grid app-img img {
-	 border-radius: 10px;
-   max-height: 200px;
+.products--grid app-img img {
+  border-radius: 10px;
+  max-height: 200px;
+}
+.product-detail {
+  padding: 0.5em;
+}
+.product-detail .swiper-slide {
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+.product-detail .swiper-slide img {
+  width: 100%;
 }
