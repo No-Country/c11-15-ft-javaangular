@@ -12,6 +12,7 @@ import { PetDetailComponent } from './pages/pet-detail/pet-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 
 import { AuthGuard } from '../guards/auth.guard';
+import { FormComponent } from './pages/form/form.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,12 @@ const routes: Routes = [
         component: ProfileComponent,
         pathMatch: 'full',
         title: 'profile',
+      },
+      {
+        path: 'form',
+        component: FormComponent,
+        pathMatch: 'full',
+        title: 'formulario'
       },
     ],
   },

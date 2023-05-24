@@ -15,11 +15,13 @@ import { PetDetailComponent } from './pages/pet-detail/pet-detail.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomFormsModule, CustomValidators } from 'ng2-validation';
 
 import { PetallComponent } from './components/petall/petall.component';
 import { PetComponent } from './components/pet/pet.component';
 
 import { RecoveryComponent } from './pages/recovery/recovery.component';
+import { FormComponent } from './pages/form/form.component';
 
 
 @NgModule({
@@ -27,7 +29,6 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
     NavComponent,
     LoginComponent,
     RegisterComponent,
-
     HomeComponent,
     ImgComponent,
     PetComponent,
@@ -37,14 +38,16 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
     RecoveryComponent,
     ProfileComponent,
     PetDetailComponent,
-    LayoutComponent
+    LayoutComponent,
+    FormComponent
   ],
   imports: [
     CommonModule,
     WebsiteRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SwiperModule
+    SwiperModule,
+    CustomFormsModule
   ]
 })
 export class WebsiteModule { }
