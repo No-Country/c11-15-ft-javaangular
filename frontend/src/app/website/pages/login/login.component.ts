@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
@@ -9,32 +9,30 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  model = {
-    email: '',
-    password: '',
-  }
+export class LoginComponent {
   profile: User | null = null;
 
-  public loginForm!: FormGroup;
+  email = new FormControl('', Validators.compose([Validators.required, Validators.email]))
+  password = new FormControl('', Validators.required);
 
   constructor(
     private router: Router,
     private authService: AuthService,
   ){}
 
-  ngOnInit(): void {
-  }
+  form = new FormGroup({
+    email: this.email,
+    password: this.password
+  })
 
-  login(data: any){
-    console.log(data, 'hola')
-    this.authService.loginAndGet(data['email'], data['password'] )
+  login(){
+    console.log(this.form.value.email);
+    this.authService.loginAndGet(this.form.value.email + '' , this.form.value.password + '')
     .subscribe(res=>{
       this.profile = res;
-      if(res.email === this.model.email && res.password === this.model.password){
+      if(res.email === this.profile.email && res.password === this.profile.password){
         alert('Login exitoso');
         this.router.navigate(['home'])
-        this.loginForm.reset();
       }
     },error=>{
       alert('ocurrio un error')
