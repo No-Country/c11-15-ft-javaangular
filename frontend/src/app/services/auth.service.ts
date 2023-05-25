@@ -14,7 +14,7 @@ import { Mascota } from '../models/pet.model';
 })
 export class AuthService {
 
-  private apiUrl = `${environment.API_URL}/api/auth`;
+  private apiUrl = `${environment.API_URL}/api`;
   private user = new BehaviorSubject<User | null>(null);
 
   user$ = this.user.asObservable();
@@ -25,14 +25,14 @@ export class AuthService {
   ) { }
 
   login(email: string, password: string) {
-    return this.http.post<Auth>(`${this.apiUrl}/login`, {email, password})
+    return this.http.post<Auth>(`${this.apiUrl}/authentication/sign-in`, {email, password})
     .pipe(
-      tap(response => this.tokenService.saveToken(response.access_token))
+      tap(response => this.tokenService.saveToken(response.token))
     );
   }
 
   getProfile() {
-    return this.http.get<User>(`${this.apiUrl}/profile`)
+    return this.http.get<User>(`${this.apiUrl}/account`)
     .pipe(
       tap(user => this.user.next(user))
     );

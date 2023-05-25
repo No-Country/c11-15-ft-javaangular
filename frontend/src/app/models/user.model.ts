@@ -2,8 +2,7 @@ export interface User {
   id: string;
   email: string;
   password: string;
-  name: string;
-  role?: string;
+  /* token: string */
 }
 
 export interface CreateUser extends Omit<User, 'id'> {}
