@@ -5,17 +5,15 @@
   </div>
   <!-- formulario -->
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form class="space-y-6" #f="ngForm" (ngSubmit)="f.form.valid && registerUser(f)" novalidate>
+    <form class="space-y-6" [formGroup]="form" (ngSubmit)="form.valid && registerUser()" novalidate>
       <!-- entrada para el correo con validaciones y regex -->
       <div>
         <label for="email" class="block text-sm font-medium leading-6 text-gray-900"></label>
         <div class="mt-2">
-          <input placeholder="  Ingresa tu correo" [(ngModel)]="model.email" id="email"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="email" type="email" autocomplete="email" required
-            ngModel #emailref="ngModel"
+          <input placeholder="  Ingresa tu correo"  id="email" name="email" type="email" autocomplete="email" required formControlName="email"
             class="form-control block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          <div *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)" class="alert alert-danger">
-            <div *ngIf="emailref.errors['required']"
+          <div *ngIf="form.controls.email.errors &&(form.controls.email.touched || form.controls.email.dirty)" class="alert alert-danger">
+            <div *ngIf="form.controls.email.errors['required']"
               class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
               <strong class="font-bold">El correo es requerido</strong>
               <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
@@ -27,7 +25,7 @@
                 </svg>
               </span>
             </div>
-            <div [hidden]="!emailref.errors?.['pattern']"
+            <div [hidden]="!form.controls.email.errors?.['email']"
               class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
               <strong class="font-bold">El correo es invalidado</strong>
               <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
@@ -46,7 +44,7 @@
       <div>
         <label for="name" class="block text-sm font-medium leading-6 text-gray-900"></label>
         <div class="mt-2">
-          <input placeholder="  Ingresa tu nombre completo" [(ngModel)]="model.name" id="name" name="name" type="text"
+          <input placeholder="  Ingresa tu nombre completo" formControlName="name" id="name" name="name" type="text"
             required
             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
         </div>
@@ -55,12 +53,12 @@
       <div>
         <label for="password" class="block text-sm font-medium leading-6 text-gray-900"></label>
         <div class="mt-2">
-          <input placeholder="  Ingresa contraseña" [(ngModel)]="model.password" id="password" name="password"
-            type="password" autocomplete="current-password" required #passref="ngModel" minlength="4"
+          <input placeholder="  Ingresa contraseña" id="password" name="password"
+            type="password" autocomplete="current-password" required minlength="4" formControlName="password"
             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          <div *ngIf="passref.errors &&(passref.touched || passref.dirty)" class="alert alert-danger">
-            <div *ngIf="passref.errors['required']"
-              class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+          <div *ngIf="form.controls.password.errors &&(form.controls.password.touched || form.controls.password.dirty)" class="alert alert-danger">
+            <div *ngIf="form.controls.password.errors['required']"
+              class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
               <strong class="font-bold">La contraseña es requerida</strong>
               <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
                 <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +69,7 @@
                 </svg>
               </span>
             </div>
-            <div [hidden]="!passref.errors?.['minlength']"
+            <div [hidden]="!form.controls.password.errors?.['minlength']"
               class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
               <strong class="font-bold">La contraseña debe ser minimo 4 digitos</strong>
               <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
@@ -91,10 +89,10 @@
         <label for="password2" class="block text-sm font-medium leading-6 text-gray-900"></label>
         <div class="mt-2">
           <input id="password2" placeholder="  Confirma contraseña" name="password2" type="password"
-            autocomplete="current-password" required #passref1="ngModel" ngModel minlength="4" [ngClass]="{ 'is-valid': passref.value === passref1.value, 'is-invalid': passref.value !== passref1.value }"
+            autocomplete="current-password" required minlength="4" formControlName="certainPassword"
             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          <div *ngIf="passref1.errors &&(passref1.touched || passref1.dirty)" class="alert alert-danger">
-            <div *ngIf="passref1.errors['required']"
+          <div *ngIf="form.controls.certainPassword.errors &&(form.controls.certainPassword.touched || form.controls.certainPassword.dirty)" class="alert alert-danger">
+            <div *ngIf="form.controls.certainPassword.errors['required']"
               class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
               <strong class="font-bold">La contraseña es requerida</strong>
               <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
@@ -106,7 +104,7 @@
                 </svg>
               </span>
             </div>
-            <div [hidden]="!passref1.errors?.['minlength']"
+            <div [hidden]="!form.controls.certainPassword.errors?.['minlength']"
               class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
               <strong class="font-bold">La contraseña debe ser minimo 4 digitos</strong>
               <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
@@ -118,7 +116,7 @@
                 </svg>
               </span>
             </div>
-            <div [hidden]="!passref1.errors"
+            <div [hidden]="!form.controls.certainPassword.errors?.['equalTo']"
               class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
               <strong class="font-bold">La contraseña debe ser igua</strong>
               <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
@@ -146,3 +144,4 @@
     </p>
   </div>
 </div>
+

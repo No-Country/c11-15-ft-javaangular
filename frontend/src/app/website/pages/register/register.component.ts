@@ -1,39 +1,52 @@
+import { CreateUser, User } from 'src/app/models/user.model';
 import { UsersService } from './../../../services/users.service';
-import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { CustomValidators } from 'ng2-validation';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
+  constructor(private router: Router, private usersService: UsersService) {}
 
-  model = {
-      name: '',
-      email: '',
-      password: '',
-    }
+  email = new FormControl(
+    '',
+    Validators.compose([Validators.required, Validators.email])
+  );
+  name = new FormControl('', Validators.required);
+  password = new FormControl('', Validators.required);
+  certainPassword = new FormControl(
+    '',
+    CustomValidators.equalTo(this.password)
+  );
 
-  constructor(
-    private router: Router,
-    private usersService: UsersService,
-  ) {}
+  form = new FormGroup({
+    email: this.email,
+    name: this.name,
+    password: this.password,
+    certainPassword: this.certainPassword,
+  });
 
-  ngOnInit(): void {
-  }
-
-  registerUser(data: any){
-    const a = { 'name' :data.value['name'], 'email' :data.value['email'], 'password': data.value['password']};
-    this.usersService.create(a)
-    .subscribe(res => {
-      alert("registrado exitosamente");
-      this.router.navigate(['login']);
-    },err=>{
-      alert('ocurrio un error')
-    })
+  registerUser() {
+    console.log(this.form.value);
+    this.usersService.create({
+      name: this.form.value.name + '',
+      email: this.form.value.email + '',
+      password: this.form.value.password + ''
+    }).subscribe(
+      (res) => {
+        alert('registrado exitosamente');
+        this.router.navigate(['login']);
+      },
+      (err) => {
+        alert('ocurrio un error');
+      }
+    );
     /* this.http.post<any>(this.apiUrl, this.register.value)
     .subscribe(res => {
       alert("registrado exitosamente");
@@ -44,5 +57,3 @@ export class RegisterComponent implements OnInit {
     }) */
   }
 }
-
-
