@@ -8,17 +8,17 @@ import { User, CreateUser } from '../models/user.model';
 })
 export class UsersService {
 
-  private apiUrl = `${environment.API_URL}/api/users`
+  private apiUrl = `${environment.API_URL}/api/authentication/sign-up`
 
   constructor(
     private http: HttpClient
   ) { }
 
   create(data: CreateUser) {
-    return this.http.post<User>(this.apiUrl, data)
+    return this.http.post<CreateUser>(this.apiUrl, data)
   }
 
-  getAll() {
+ /*  getAll() {
     return this.http.get<User[]>(this.apiUrl)
-  }
+  } */
 }

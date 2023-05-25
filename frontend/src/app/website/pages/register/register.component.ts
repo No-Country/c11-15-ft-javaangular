@@ -35,9 +35,8 @@ export class RegisterComponent {
   registerUser() {
     console.log(this.form.value);
     this.usersService.create({
-      name: this.form.value.name + '',
-      email: this.form.value.email + '',
-      password: this.form.value.password + ''
+      "email": this.form.value.email + "",
+      "password": this.form.value.password + ""
     }).subscribe(
       (res) => {
         alert('registrado exitosamente');

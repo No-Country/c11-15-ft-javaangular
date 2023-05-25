@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 })
 export class PetallService {
 
-  private apiUrl = `${environment.API_URL}/api`;
+  private apiUrl = `${environment.API_URL}`;
 
   constructor(
     private http: HttpClient
@@ -33,7 +33,7 @@ export class PetallService {
       params = params.set('limit', limit);
       params = params.set('offset', offset);
     }
-    return this.http.get<Mascota[]>(`${this.apiUrl}/products`, { params })
+    return this.http.get<Mascota[]>(`${this.apiUrl}/pet/all`, { params })
     .pipe(
       retry(3),
       map(products => products.map(item => {
