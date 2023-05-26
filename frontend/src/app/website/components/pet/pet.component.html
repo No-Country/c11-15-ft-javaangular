@@ -6,7 +6,7 @@
 </a>
 <h2 class="title">{{ mascota.description| currency }}</h2>
 <p>{{ mascota.title }}</p>
-<p class="category">{{ mascota.category?.name }}</p>
+<p class="category">{{ mascota.category.name }}</p>
 <!-- <button (click)="onShowDetail()">Ver detalle</button> -->
 <a routerLink="." [queryParams]="{ product: mascota.id }">Ver detalle</a>
 <button (click)="onAddToCart()">Add cart</button>
