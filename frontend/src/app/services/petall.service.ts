@@ -53,7 +53,7 @@ export class PetallService {
   }
 
   getOne(id: string) {
-    return this.http.get<Mascota>(`${this.apiUrl}/products/${id}`)
+    return this.http.get<Mascota>(`${this.apiUrl}/pet/${id}`)
     .pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === HttpStatusCode.Conflict) {

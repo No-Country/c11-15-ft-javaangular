@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
     this.showImg = !this.showImg;
   }
 
-  createUser() {
+/*   createUser() {
     this.usersService.create({
       email: 'sebas1@mail.com',
       password: '11212'
@@ -46,5 +46,5 @@ export class AppComponent implements OnInit {
     .subscribe(rta => {
       console.log(rta);
     });
-  }
+  } */
 }
