@@ -45,10 +45,11 @@ export class RegisterComponent {
       .subscribe(
         (res) => {
           alert('registrado exitosamente');
+          const a = this.usersService.acount();
+          this.usersService.activeAcount(a);
           this.router.navigate(['login']);
         },
         (err) => {
-          setTimeout(() => alert('10 seconds delay here!'), 5000);
           alert('ocurrio un error');
         }
       );
