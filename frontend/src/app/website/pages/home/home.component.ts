@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent {
 
-  mascota: Mascota[] = [];
+  mascota: any[] = [];
   limit = 10;
   offset = 0;
   petId: string | null = null;
