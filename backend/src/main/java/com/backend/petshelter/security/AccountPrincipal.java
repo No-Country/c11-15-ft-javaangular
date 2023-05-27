@@ -1,5 +1,6 @@
 package com.backend.petshelter.security;
 
+import com.backend.petshelter.dto.AccountSignIn;
 import com.backend.petshelter.model.Account;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,7 +21,7 @@ public class AccountPrincipal implements UserDetails {
     private String id;
     private String email;
     transient private String password;
-    transient private Account account;
+    transient private AccountSignIn account;
     private Set<GrantedAuthority> authorities;
 
     @Override

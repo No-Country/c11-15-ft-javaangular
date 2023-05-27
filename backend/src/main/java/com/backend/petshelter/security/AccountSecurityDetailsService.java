@@ -1,5 +1,6 @@
 package com.backend.petshelter.security;
 
+import com.backend.petshelter.dto.AccountSignIn;
 import com.backend.petshelter.model.Account;
 import com.backend.petshelter.service.AccountService;
 import com.backend.petshelter.util.security.SecurityUtils;
@@ -21,10 +22,18 @@ public class AccountSecurityDetailsService implements UserDetailsService {
         Account account = accountService.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("La cuenta no fue encontrado:"+email));
 
+        AccountSignIn accountSignIn = new AccountSignIn();
+        accountSignIn.setEmail(account.getEmail());
+        accountSignIn.setPassword(account.getPassword());
+        accountSignIn.setToken(account.getToken());
+        boolean active = account.isActive();
+        accountSignIn.setActive(active);
+
+
         Set<GrantedAuthority> authorities = Set.of(SecurityUtils.convertToAuthority(account.getRol().name()));
 
         return AccountPrincipal.builder()
-                .account(account)
+                .account(accountSignIn)
                 .id(account.getAccountUuid())
                 .email(email)
                 .password(account.getPassword())

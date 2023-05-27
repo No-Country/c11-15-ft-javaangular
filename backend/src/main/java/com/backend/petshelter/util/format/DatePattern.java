@@ -1,4 +1,4 @@
-package com.backend.petshelter.util.dateformat;
+package com.backend.petshelter.util.format;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

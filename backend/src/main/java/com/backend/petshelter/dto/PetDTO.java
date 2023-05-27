@@ -3,7 +3,7 @@ package com.backend.petshelter.dto;
 import com.backend.petshelter.util.enums.NivelActividad;
 import com.backend.petshelter.util.enums.Sex;
 import com.backend.petshelter.util.enums.Species;
-import com.backend.petshelter.util.enums.Tamaño;
+import com.backend.petshelter.util.enums.Size;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -23,7 +23,7 @@ public class PetDTO {
     private Boolean desparacitado;
     private Boolean vacunado;
     private NivelActividad nivelActividad;
-    private Tamaño tamaño;
+    private Size tamaño;
     private Species especie;
     private Sex sex;
     private Boolean activo = true;
