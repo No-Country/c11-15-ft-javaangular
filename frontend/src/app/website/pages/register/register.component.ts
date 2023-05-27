@@ -48,7 +48,7 @@ export class RegisterComponent {
           this.router.navigate(['login']);
         },
         (err) => {
-          setInterval(() => alert('10 seconds delay here!'), 5000);
+          setTimeout(() => alert('10 seconds delay here!'), 5000);
           alert('ocurrio un error');
         }
       );
