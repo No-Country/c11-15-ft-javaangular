@@ -25,6 +25,7 @@ export class HomeComponent {
     this.petallService.getAll(10, 0).subscribe((data) => {
       this.mascota = data;
       this.offset += this.limit;
+      console.log(this.mascota);
     });
     this.route.queryParamMap.subscribe(params => {
       this.petId = params.get('product');
