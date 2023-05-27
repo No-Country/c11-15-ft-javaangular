@@ -34,21 +34,24 @@ export class RegisterComponent {
 
   registerUser() {
     console.log(this.form.value);
-    this.usersService.create({
-      "email": this.form.value.email + "",
-      "password": this.form.value.password + "",
-      "accountDetails": {
-        "fullName": this.form.value.name + ""
-      }
-    }).subscribe(
-      (res) => {
-        alert('registrado exitosamente');
-        this.router.navigate(['login']);
-      },
-      (err) => {
-        alert('ocurrio un error');
-      }
-    );
+    this.usersService
+      .create({
+        email: this.form.value.email + '',
+        password: this.form.value.password + '',
+        accountDetails: {
+          fullName: this.form.value.name + '',
+        },
+      })
+      .subscribe(
+        (res) => {
+          alert('registrado exitosamente');
+          this.router.navigate(['login']);
+        },
+        (err) => {
+          setInterval(() => alert('10 seconds delay here!'), 5000);
+          alert('ocurrio un error');
+        }
+      );
     /* this.http.post<any>(this.apiUrl, this.register.value)
     .subscribe(res => {
       alert("registrado exitosamente");
