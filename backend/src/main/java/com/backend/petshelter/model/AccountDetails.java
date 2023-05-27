@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -17,7 +18,7 @@ import java.util.List;
 @ToString
 @Entity
 @Table(name = "ACCOUNTDETAILS")
-public class AccountDetails {
+public class AccountDetails implements Serializable {
     @Id
     @Column(name = "accountdetails_uuid")
     private String accountDetailsuuid;

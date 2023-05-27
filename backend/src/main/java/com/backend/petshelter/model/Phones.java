@@ -7,13 +7,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Entity
 @Table(name = "PHONE")
-public class Phones {
+public class Phones implements Serializable {
     @Id
     private String phoneUuid;
     @Enumerated(EnumType.STRING)

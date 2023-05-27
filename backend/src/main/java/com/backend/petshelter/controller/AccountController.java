@@ -31,17 +31,34 @@ public class AccountController {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
-
     }
-
+    @GetMapping("/verify/{verificationCode}")
+    public ResponseEntity<?> verifyAccount(@PathVariable String verificationCode) {
+        try {
+            if (verificationCode == null) {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Verification Failed");
+            } else {
+                boolean verified = accountService.verifyAccount(verificationCode);
+                if (verified) {
+                    return ResponseEntity.ok("Verification Succeeded");
+                } else {
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Verification Failed");
+                }
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("An error occurred while verify the account" + e.getMessage());
+        }
+    }
     @GetMapping()
     public ResponseEntity<?> getCurrentAccount(@AuthenticationPrincipal AccountPrincipal accountPrincipal) {
         try {
-            return new ResponseEntity<>(accountService.findByAccountReturnToken(accountPrincipal.getUsername()), HttpStatus.OK);
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
-        }
+            Account account = accountService.findByAccountReturnToken(accountPrincipal.getUsername());
+            AccountDTO accountDTO = accountService.getCurrentAccount(account);
+            return new ResponseEntity<>(accountDTO, HttpStatus.OK);
 
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
     }
 
     @PutMapping("updateAccount/{email}")
