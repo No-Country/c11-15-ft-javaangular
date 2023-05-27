@@ -13,7 +13,7 @@ import { PetallService } from 'src/app/services/petall.service';
   styleUrls: ['./petall.component.scss'],
 })
 export class PetallComponent {
-  myStorePet: Mascota[] = [];
+  myStorePet: any[] = [];
   total = 0;
 
   @Input() mascotas: Mascota[] = [];
