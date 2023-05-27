@@ -24,6 +24,6 @@ export class StoreService {
   }
 
   getTotal() {
-    return this.myStorePet.reduce((sum, item)=> sum + item.price, 0);
+    return this.myStorePet.reduce((item)=>item);
   }
 }

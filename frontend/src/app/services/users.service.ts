@@ -18,7 +18,14 @@ export class UsersService {
     return this.http.post<CreateUser>(this.apiUrl, data)
   }
 
- /*  getAll() {
+  acount() {
+    return this.http.get<any>('https://mascotasencasa-eb90d.web.app/verify/')
+  }
+
+  activeAcount (data: any) {
+    this.http.get<any>('https://test-petshelter-dev.up.railway.app/api/account/verify/', data)
+  }
+  getAll() {
     return this.http.get<User[]>(this.apiUrl)
-  } */
+  }
 }

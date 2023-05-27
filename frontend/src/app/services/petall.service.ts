@@ -18,14 +18,14 @@ export class PetallService {
     private http: HttpClient
   ) { }
 
-  getByCategory(categoryId: string, limit?: number, offset?: number){
+/*   getByCategory(categoryId: string, limit?: number, offset?: number){
     let params = new HttpParams();
     if (limit && offset != null) {
       params = params.set('limit', limit);
       params = params.set('offset', offset);
     }
     return this.http.get<Mascota[]>(`${this.apiUrl}/categories/${categoryId}/products`, { params })
-  }
+  } */
 
   getAll(limit?: number, offset?: number) {
     let params = new HttpParams();
@@ -43,6 +43,7 @@ export class PetallService {
         }
       }))
     );
+
   }
 
   fetchReadAndUpdate(id: string, dto: UpdateMascota) {

@@ -1,12 +1,12 @@
 <a [routerLink]="['/pet', mascota.id]">
   <app-img
-    *ngIf="mascota.images.length > 0"
-    [img]="mascota.images[0]"
+    *ngIf="mascota.foto.length > 0"
+    [img]="mascota.foto[0]"
   ></app-img>
 </a>
-<h2 class="title">{{ mascota.description| currency }}</h2>
-<p>{{ mascota.title }}</p>
-<p class="category">{{ mascota.category.name }}</p>
+<h2 class="title">{{ mascota.descripcion| currency }}</h2>
+<p>{{ mascota.nombre }}</p>
+<p class="category">{{ mascota.especie }}</p>
 <!-- <button (click)="onShowDetail()">Ver detalle</button> -->
 <a routerLink="." [queryParams]="{ product: mascota.id }">Ver detalle</a>
-<button (click)="onAddToCart()">Add cart</button>
+<!-- <button (click)="onAddToCart()">Add cart</button> -->

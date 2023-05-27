@@ -38,7 +38,7 @@ export class PetallComponent {
 
   onAddToShoppingCart(mascota: Mascota) {
     this.storeService.addProduct(mascota);
-    this.total = this.storeService.getTotal();
+    /* this.total = this.storeService.getTotal(); */
     console.log(mascota);
   }
 
@@ -65,12 +65,21 @@ export class PetallComponent {
 
   createNewProduct() {
     const pet: CreateMascota = {
-      title: 'nueva mascota',
-      description: 'ingrsando una nueva mascota',
-      images: [
-        'https://cdn.shopify.com/s/files/1/0095/4253/3179/files/mobile-banne_-new.jpg?v=1614330110',
-      ],
-      price: 1200,
+      nombre: 'nueva mascota',
+      descripcion: 'ingrsando una nueva mascota',
+      foto: 'https://cdn.shopify.com/s/files/1/0095/4253/3179/files/mobile-banne_-new.jpg?v=1614330110',
+      cuidados: 'no',
+      localidad: 'cali',
+      contacto: 123,
+      fechaDeNacimiento: 'jun-13-20',
+      esterilizado: true,
+      desparacitado: false,
+      vacunado: true,
+      nivelActividad: 'Alto',
+      size: 'grande',
+      especie: 'perro',
+      sex: 'male',
+      activo: true,
       categoryId: 2,
     };
     this.petallService.create(pet).subscribe((data) => {
@@ -82,8 +91,8 @@ export class PetallComponent {
   updateMascota() {
     if (this.petChosen) {
       const changes: UpdateMascota = {
-        title: 'mascota actualizada',
-        description: 'esta mascota fue actulizada jejejejeej',
+        descripcion: 'mascota actualizada',
+        desparacitado: true,
       };
       const id = this.petChosen?.id;
       this.petallService.update(id, changes).subscribe((data) => {
