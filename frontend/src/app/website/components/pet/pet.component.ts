@@ -7,7 +7,7 @@ import { Mascota } from '../../../models/pet.model';
   styleUrls: ['./pet.component.css']
 })
 export class PetComponent {
-  @Input() mascota: Mascota = {
+  @Input() mascota: any = {
     id: '',
     price: 0,
     images: [],
