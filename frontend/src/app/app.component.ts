@@ -40,6 +40,7 @@ export class AppComponent implements OnInit {
 
   createUser() {
     this.usersService.create({
+      name: 'sebas',
       email: 'sebas1@mail.com',
       password: '11212'
     })
