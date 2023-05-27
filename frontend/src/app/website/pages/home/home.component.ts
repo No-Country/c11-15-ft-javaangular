@@ -25,19 +25,20 @@ export class HomeComponent {
     this.petallService.getAll(10, 0).subscribe((data) => {
       this.mascota = data;
       this.offset += this.limit;
+      console.log(this.mascota);
     });
-    this.route.queryParamMap.subscribe(params => {
+/*     this.route.queryParamMap.subscribe(params => {
       this.petId = params.get('product');
       console.log(this.petId);
-    })
+    }) */
   }
 
-  onLoadMore() {
+/*   onLoadMore() {
     this.petallService
       .getAll(this.limit, this.offset)
       .subscribe((data) => {
         this.mascota = this.mascota.concat(data);
         this.offset += this.limit;
       });
-  }
+  } */
 }
