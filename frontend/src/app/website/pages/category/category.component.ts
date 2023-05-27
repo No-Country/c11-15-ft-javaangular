@@ -9,8 +9,8 @@ import { PetallService } from 'src/app/services/petall.service';
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css'],
 })
-export class CategoryComponent implements OnInit {
-  categoryId: string | null = null;
+export class CategoryComponent {
+/*   categoryId: string | null = null;
   limit = 10;
   offset = 0;
   mascota: Mascota[] = [];
@@ -54,5 +54,5 @@ export class CategoryComponent implements OnInit {
           this.offset += this.limit;
         });
     }
-  }
+  } */
 }

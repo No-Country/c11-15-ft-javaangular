@@ -22,7 +22,7 @@ export class HomeComponent {
 
 
   ngOnInit(): void {
-    this.petallService.getAll(10, 0).subscribe((data) => {
+    this.petallService.getAll().subscribe((data) => {
       this.mascota = data;
       this.offset += this.limit;
       console.log(this.mascota);
