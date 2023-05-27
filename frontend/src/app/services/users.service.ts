@@ -25,7 +25,7 @@ export class UsersService {
   activeAcount (data: any) {
     this.http.get<any>('https://test-petshelter-dev.up.railway.app/api/account/verify/', data)
   }
- /*  getAll() {
+  getAll() {
     return this.http.get<User[]>(this.apiUrl)
-  } */
+  }
 }

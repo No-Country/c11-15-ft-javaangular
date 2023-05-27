@@ -3,15 +3,15 @@
   <div class="detail" *ngIf="mascota">
     <div class="gallery">
       <swiper [slidesPerView]='1'>
-        <ng-template swiperSlide *ngFor="let img of mascota?.images">
+        <ng-template swiperSlide *ngFor="let img of mascota.foto">
           <img [src]="img" alt="img">
         </ng-template>
       </swiper>
     </div>
     <div>
-      <h1>{{ mascota.title }}</h1>
-      <h2>{{ mascota.price }}</h2>
-      <p>{{ mascota.description }}</p>
+      <h1>{{ mascota.nombre }}</h1>
+      <h2>{{ mascota.sex }}</h2>
+      <p>{{ mascota.descripcion }}</p>
     </div>
   </div>
 </div>
