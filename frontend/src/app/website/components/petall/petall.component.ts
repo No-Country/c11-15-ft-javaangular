@@ -16,7 +16,7 @@ export class PetallComponent {
   myStorePet: any[] = [];
   total = 0;
 
-  @Input() mascotas: Mascota[] = [];
+  @Input() mascotas: any[] = [];
   @Input()
   set petId(id: string | null ){
     if (id) {
