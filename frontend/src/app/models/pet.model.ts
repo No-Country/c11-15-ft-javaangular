@@ -1,6 +1,6 @@
 export interface Mascota {
   id: string;
-  title: string;
+  nombre: string;
   price: number;
   images: string [];
   description: string;

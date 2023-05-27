@@ -65,7 +65,7 @@ export class PetallComponent {
 
   createNewProduct() {
     const pet: CreateMascota = {
-      title: 'nueva mascota',
+      nombre: 'labrador',
       description: 'ingrsando una nueva mascota',
       images: [
         'https://cdn.shopify.com/s/files/1/0095/4253/3179/files/mobile-banne_-new.jpg?v=1614330110',
@@ -82,7 +82,7 @@ export class PetallComponent {
   updateMascota() {
     if (this.petChosen) {
       const changes: UpdateMascota = {
-        title: 'mascota actualizada',
+        nombre: 'mascota actualizada',
         description: 'esta mascota fue actulizada jejejejeej',
       };
       const id = this.petChosen?.id;
