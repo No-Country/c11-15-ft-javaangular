@@ -24,7 +24,7 @@ export class PetallService {
       params = params.set('limit', limit);
       params = params.set('offset', offset);
     }
-    return this.http.get<Mascota[]>(`${this.apiUrl}/categories/${categoryId}/products`, { params })
+    return this.http.get<any[]>(`${this.apiUrl}/categories/${categoryId}/products`, { params })
   }
 
   getAll(limit?: number, offset?: number) {
@@ -53,7 +53,7 @@ export class PetallService {
   }
 
   getOne(id: string) {
-    return this.http.get<Mascota>(`${this.apiUrl}/products/${id}`)
+    return this.http.get<any>(`${this.apiUrl}/products/${id}`)
     .pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === HttpStatusCode.Conflict) {
@@ -71,11 +71,11 @@ export class PetallService {
   }
 
   create(dto: CreateMascota) {
-    return this.http.post<Mascota>(`${this.apiUrl}/products`, dto);
+    return this.http.post<any>(`${this.apiUrl}/products`, dto);
   }
 
   update(id: string, dto: UpdateMascota) {
-    return this.http.put<Mascota>(`${this.apiUrl}/products/${id}`, dto);
+    return this.http.put<any>(`${this.apiUrl}/products/${id}`, dto);
   }
 
   delete(id: string) {
