@@ -33,7 +33,7 @@ export class PetallService {
       params = params.set('limit', limit);
       params = params.set('offset', offset);
     }
-    return this.http.get<Mascota[]>(`${this.apiUrl}/pet/all`)
+    return this.http.get<any[]>(`${this.apiUrl}/pet/all`)
     .pipe(
       retry(3),
       map(products => products.map(item => {
