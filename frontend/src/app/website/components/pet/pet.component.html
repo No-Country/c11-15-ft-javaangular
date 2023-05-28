@@ -1,6 +1,6 @@
 <a [routerLink]="['/pet', mascota.id]">
   <app-img
-    *ngIf="mascota.foto"
+    *ngIf="mascota.foto.length > 0"
     [img]="mascota.foto[0]"
   ></app-img>
 </a>
