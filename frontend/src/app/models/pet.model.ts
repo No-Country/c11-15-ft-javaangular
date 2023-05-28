@@ -1,13 +1,23 @@
 export interface Mascota {
   id: string;
   nombre: string;
-  price: number;
-  images: string [];
-  description: string;
-  category: Category;
+  foto: string;
+  descripcion: string;
+  cuidados: string;
+  localidad: string;
+  contacto: number;
+/*   fechaDeNacimiento: string; */
+  esterilizado: boolean;
+  desparacitado: boolean;
+  vacunado: boolean;
+  nivelActividad: string;
+  size: null;
+  especie: string;
+  sex: string;
+  activo: boolean;
 }
 
-export interface Category{
+export interface Category {
   id: string;
   name: string;
 }

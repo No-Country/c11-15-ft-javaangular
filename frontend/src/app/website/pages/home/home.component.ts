@@ -6,11 +6,10 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-
-  mascota: any[] = [];
+  mascota: Mascota[] = [];
   limit = 10;
   offset = 0;
   petId: string | null = null;
@@ -20,25 +19,22 @@ export class HomeComponent {
     private route: ActivatedRoute
   ) {}
 
-
   ngOnInit(): void {
     this.petallService.getAll().subscribe((data) => {
       this.mascota = data;
       this.offset += this.limit;
       console.log(this.mascota);
     });
-    this.route.queryParamMap.subscribe(params => {
+/*     this.route.queryParamMap.subscribe((params) => {
       this.petId = params.get('product');
       console.log(this.petId);
-    })
+    }); */
   }
 
   onLoadMore() {
-    this.petallService
-      .getAll(this.limit, this.offset)
-      .subscribe((data) => {
-        this.mascota = this.mascota.concat(data);
-        this.offset += this.limit;
-      });
+    this.petallService.getAll(this.limit, this.offset).subscribe((data) => {
+      this.mascota = this.mascota.concat(data);
+      this.offset += this.limit;
+    });
   }
 }

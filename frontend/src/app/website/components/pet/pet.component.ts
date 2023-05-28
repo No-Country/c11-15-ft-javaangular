@@ -7,16 +7,23 @@ import { Mascota } from '../../../models/pet.model';
   styleUrls: ['./pet.component.css']
 })
 export class PetComponent {
-  @Input() mascota: any = {
-    id: '',
-    price: 0,
-    images: [],
-    title: '',
-    description: '',
-    category: {
-      id: '',
-      name: ''
-    }
+  @Input() mascota: Mascota = {
+  id: '',
+  nombre: '',
+  foto: '',
+  descripcion: '',
+  cuidados: '',
+  localidad: '',
+  contacto: 0,
+/*   fechaDeNacimiento: string; */
+  esterilizado: false,
+  desparacitado: false,
+  vacunado: false,
+  nivelActividad: '',
+  size: null,
+  especie: '',
+  sex: '',
+  activo: false,
   };
 
   @Output() addedProduct = new EventEmitter<Mascota>();
