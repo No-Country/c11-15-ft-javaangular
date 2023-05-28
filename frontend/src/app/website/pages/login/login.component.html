@@ -12,7 +12,7 @@
         <div class="mt-2">
           <input formControlName="email" id="email" name="email"
             type="email" placeholder="  Ingresa tu correo" autocomplete="email" required
-            class="form-control block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            class="form-control block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm pl-4 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           <div *ngIf="form.controls.email.errors && (form.controls.email.touched || form.controls.email.dirty)" class="alert alert-danger">
             <div *ngIf="form.controls.email.errors['required']" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
               <strong class="font-bold">El correo es requerido</strong>
@@ -51,7 +51,7 @@
         <div class="mt-2">
           <input formControlName="password" id="password" placeholder="  ingresa tu conseña" name="password"
             type="password" autocomplete="current-password" required minlength="4"
-            class="form-control block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm pl-4 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
         </div>
         <div *ngIf="form.controls.password.errors &&(form.controls.password.touched || form.controls.password.dirty)" class="alert alert-danger">
             <div *ngIf="form.controls.password.errors['required']" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">

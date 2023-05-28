@@ -11,7 +11,7 @@
         <label for="email" class="block text-sm font-medium leading-6 text-gray-900"></label>
         <div class="mt-2">
           <input placeholder="  Ingresa tu correo"  id="email" name="email" type="email" autocomplete="email" required formControlName="email"
-            class="form-control block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            class="form-control block w-full rounded-md border-0 py-1.5 pl-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           <div *ngIf="form.controls.email.errors &&(form.controls.email.touched || form.controls.email.dirty)" class="alert alert-danger">
             <div *ngIf="form.controls.email.errors['required']"
               class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
@@ -46,7 +46,7 @@
         <div class="mt-2">
           <input placeholder="  Ingresa tu nombre completo" formControlName="name" id="name" name="name" type="text"
             required
-            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            class="block w-full rounded-md border-0 py-1.5 pl-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
         </div>
       </div>
       <!-- entrada de contraseña y validaciones -->
@@ -55,7 +55,7 @@
         <div class="mt-2">
           <input placeholder="  Ingresa contraseña" id="password" name="password"
             type="password" autocomplete="current-password" required minlength="4" formControlName="password"
-            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            class="block w-full rounded-md border-0 py-1.5 pl-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           <div *ngIf="form.controls.password.errors &&(form.controls.password.touched || form.controls.password.dirty)" class="alert alert-danger">
             <div *ngIf="form.controls.password.errors['required']"
               class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
@@ -90,7 +90,7 @@
         <div class="mt-2">
           <input id="password2" placeholder="  Confirma contraseña" name="password2" type="password"
             autocomplete="current-password" required minlength="4" formControlName="certainPassword"
-            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            class="block w-full rounded-md border-0 py-1.5 pl-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           <div *ngIf="form.controls.certainPassword.errors &&(form.controls.certainPassword.touched || form.controls.certainPassword.dirty)" class="alert alert-danger">
             <div *ngIf="form.controls.certainPassword.errors['required']"
               class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
@@ -134,7 +134,7 @@
       <div>
         <button type="submit"
           class="flex w-full justify-center rounded-md bg-[#FFB344] px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-yellow-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign
-          in</button>
+          up</button>
       </div>
     </form>
     <p class="mt-10 text-center text-sm text-gray-500">
