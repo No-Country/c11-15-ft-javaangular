@@ -38,7 +38,6 @@ public class Pet implements Serializable {
     private Species especie;
     private Sex sex;
     private Boolean activo = true;
-
     public void borrar(){
         this.activo = false;
     }

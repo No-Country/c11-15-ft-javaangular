@@ -43,10 +43,11 @@ public class AccountServiceImpl implements AccountService {
     private JavaMailSender javaMailSender;
     @Value("${spring.mail.username}")
     private String emailFrom;
+    @Value("${verification.base-url}")
+    protected String baseUrl;
 
     @Override
     public AccountRegistration createAccountUserRol(Account account) {
-
         try {
 
             AccountRegistration accountRegistration = new AccountRegistration();
@@ -71,14 +72,13 @@ public class AccountServiceImpl implements AccountService {
             accountRegistration.setToken(jwt);
             this.sendVerificationCodeToEmail(saveAccount);
             return accountRegistration;
-
         } catch (Exception e) {
             throw new RuntimeException("Error creating account: " + e.getMessage());
         }
     }
+
     @Override
     public void sendVerificationCodeToEmail(Account account) throws MessagingException, UnsupportedEncodingException {
-
 
         String subject = "Please verify your registration";
         String senderName = "Mascota en Casa Team";
@@ -122,6 +122,7 @@ public class AccountServiceImpl implements AccountService {
 
         javaMailSender.send(message);
     }
+
     @Override
     public Optional<Account> findByEmail(String email) {
         try {
@@ -154,6 +155,7 @@ public class AccountServiceImpl implements AccountService {
             throw new RuntimeException("Error changing role", e);
         }
     }
+
     @Transactional
     @Override
     public boolean verifyAccount(String verificationCode) {
@@ -166,6 +168,7 @@ public class AccountServiceImpl implements AccountService {
             return true;
         }
     }
+
     @Override
     public Account findByAccountReturnToken(String account) {
         Account email = accountRepository.findByEmail(account)
@@ -253,6 +256,7 @@ public class AccountServiceImpl implements AccountService {
             throw new RuntimeException("Error updating the account" + e.getMessage());
         }
     }
+
     @Override
     public AccountDTO getCurrentAccount(Account account){
         if (account != null && account.getAccountDetails() != null) {
