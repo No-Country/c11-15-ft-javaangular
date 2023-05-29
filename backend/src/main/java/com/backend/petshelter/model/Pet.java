@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -37,6 +38,8 @@ public class Pet implements Serializable {
     private Size size;
     private Species especie;
     private Sex sex;
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
+    private List<WishList> wishList;
     private Boolean activo = true;
     public void borrar(){
         this.activo = false;
