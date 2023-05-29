@@ -3,7 +3,7 @@
     <button (click)="toggleMenu()">
       <img src="./assets/svg/icon_menu.svg" alt="menu">
     </button>
-    <a href="">
+    <a routerLink="home">
       <img src="./assets/images/logo.png" width="50" alt="logo">
     </a>
     <div class="cart">
@@ -15,11 +15,34 @@
 
   </div>
   <div class="side-menu" [class.active]="activeMenu">
-    <button (click)="toggleMenu()">Close</button>
-    <ul>
-      <li><a routerLink="home">All</a></li>
-      <li *ngFor="let item of categories">
-        <a [routerLink]="['/category', item.id]">{{ item.name }}</a>
+    <ul class="flex flex-col justify-center align-middle">
+      <li class="w-full border-b-2 border-neutral-100 border-opacity-100 py-4 dark:border-opacity-50">
+        <a routerLink="home" (click)="toggleMenu()">
+          <img src="./assets/images/logo.png" width="50" alt="logo">
+        </a>
+      </li>
+      <li class="w-full border-b-2 border-neutral-100 border-opacity-100 py-4 dark:border-opacity-50">
+        <button (click)="toggleMenu()">Close</button>
+      </li>
+      <li class="w-full border-b-2 border-neutral-100 border-opacity-100 py-4 dark:border-opacity-50">
+        <a routerLink="home" (click)="toggleMenu()">
+          quiero adoptar
+        </a>
+      </li>
+      <li class="w-full border-b-2 border-neutral-100 border-opacity-100 py-4 dark:border-opacity-50">
+        <a routerLink="home" (click)="toggleMenu()">
+          Quiero dar en adopcion
+        </a>
+      </li>
+      <li class="w-full border-b-2 border-neutral-100 border-opacity-100 py-4 dark:border-opacity-50">
+        <a routerLink="home" (click)="toggleMenu()">
+          Contacto
+        </a>
+      </li>
+      <li class="w-full border-b-2 border-neutral-100 border-opacity-100 py-4 dark:border-opacity-50">
+        <a routerLink="home" (click)="toggleMenu()">
+          Preguntas frecuentes
+        </a>
       </li>
     </ul>
   </div>
@@ -27,13 +50,33 @@
 <div class="hide-mobile">
   <div>
     <nav>
-      <a class="logo" href="">
+      <a class="logo" routerLink="home">
         <img src="./assets/images/logo.png" width="50" alt="logo">
       </a>
       <ul>
-        <li><a routerLinkActive="active" routerLink="home">All</a></li>
+<!--         <li><a routerLinkActive="active" routerLink="home">All</a></li>
         <li *ngFor="let item of categories">
           <a routerLinkActive="active" [routerLink]="['/category', item.id]">{{ item.name }}</a>
+        </li> -->
+        <li>
+          <a routerLinkActive="active" routerLink="home">
+            adoptar
+          </a>
+        </li>
+        <li>
+          <a routerLinkActive="active" routerLink="form">
+            Dar adopcion
+          </a>
+        </li>
+        <li>
+          <a routerLinkActive="active" routerLink="home">
+            Contacto
+          </a>
+        </li>
+        <li>
+          <a routerLinkActive="active" routerLink="home">
+            Preguntas frecuentes
+          </a>
         </li>
       </ul>
     </nav>
@@ -54,4 +97,3 @@
     </div>
   </div>
 </div>
-

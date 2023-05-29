@@ -62,6 +62,7 @@ const routes: Routes = [
       },
       {
         path: 'form',
+        canActivate: [ AuthGuard ],
         component: FormComponent,
         pathMatch: 'full',
         title: 'formulario'

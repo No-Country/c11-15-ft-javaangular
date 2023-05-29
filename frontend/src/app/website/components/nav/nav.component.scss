@@ -71,8 +71,8 @@
         text-decoration: none;
         padding: .2em .8em;
         &.active {
-          border: 1px solid #ACD9B2;
-          color: #ACD9B2;
+          border: 1px solid transparent;
+          color: black;
           border-radius: 5px;
         }
       }

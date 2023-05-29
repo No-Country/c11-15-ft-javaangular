@@ -25,10 +25,10 @@ export class HomeComponent {
       this.offset += this.limit;
       console.log(this.mascota);
     });
-/*     this.route.queryParamMap.subscribe((params) => {
-      this.petId = params.get('product');
+    this.route.queryParamMap.subscribe((params) => {
+      this.petId = params.get('pet');
       console.log(this.petId);
-    }); */
+    });
   }
 
   onLoadMore() {

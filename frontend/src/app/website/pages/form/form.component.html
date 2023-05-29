@@ -1,4 +1,4 @@
-<!-- <section class=" py-1 bg-blueGray-50">
+<section class=" py-1 bg-blueGray-50">
   <div class="w-full lg:w-8/12 px-4 mx-auto mt-6">
     <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
       <div class="rounded-t bg-white mb-0 px-6 py-6">
@@ -26,7 +26,7 @@
                 </label>
                 <input type="text"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  value="nombre">
+                  placeholder="nombre">
               </div>
             </div>
             <div class="w-full lg:w-4/12 px-4">
@@ -52,18 +52,14 @@
             <div class="w-full lg:w-4/12 px-4">
               <div class="relative w-full mb-3">
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                  Estado*:
+                  Tamaño*:
                 </label>
                 <select type="text" name="selectPet"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
-                  <option>Estado...</option>
-                  <option value="Argentina">Argentina</option>
-                  <option value="Rep.">Rep. Dominicana</option>
-                  <option value="Colombia">Colombia</option>
-                  <option value="Perro">Peru</option>
-                  <option value="Venezuela">Venezuela</option>
-                  <option value="Panama">Panama</option>
-                  <option value="OTRO">Otro</option>
+                  <option>tamaño...</option>
+                  <option value="GRANDE">Grande</option>
+                  <option value="MEDIANO">Mediano</option>
+                  <option value="PEQUEÑO">Pequeño</option>
                 </select>
               </div>
             </div>
@@ -71,33 +67,111 @@
             <div class="w-full lg:w-4/12 px-4">
               <div class="relative w-full mb-3">
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                  Email address
+                  Sexo*:
                 </label>
-                <input type="email"
-                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  value="jesse@example.com">
+                <select type="text" name="selectPet"
+                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                  <option>Sexo...</option>
+                  <option value="MALE">Niño</option>
+                  <option value="FEMALE">Niña</option>
+                </select>
               </div>
             </div>
-            <div class="w-full lg:w-6/12 px-4">
+
+            <div class="w-full lg:w-4/12 px-4">
               <div class="relative w-full mb-3">
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                  First Name
+                  Nivel de actividad*:
                 </label>
-                <input type="text"
-                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  value="Lucky">
+                <select type="text" name="selectPet"
+                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                  <option>comportamiento...</option>
+                  <option value="BAJO">Bajo</option>
+                  <option value="MODERADO">Moderado</option>
+                  <option value="ALTO">Alto</option>
+                </select>
               </div>
             </div>
-            <div class="w-full lg:w-6/12 px-4">
+
+            <div class="w-full lg:w-4/12 px-4">
               <div class="relative w-full mb-3">
                 <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                  Last Name
+                  Vacunado*:
                 </label>
-                <input type="text"
-                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  value="Jesse">
+                <select type="text" name="selectPet"
+                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                  <option>selecciona...</option>
+                  <option value=true>Si</option>
+                  <option value=false>No</option>
+                </select>
               </div>
             </div>
+
+            <div class="w-full lg:w-4/12 px-4">
+              <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                  Desparacitado*:
+                </label>
+                <select type="text" name="selectPet"
+                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                  <option>selecciona...</option>
+                  <option value=true>Si</option>
+                  <option value=false>No</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="w-full lg:w-4/12 px-4">
+              <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                  Esterilizado*:
+                </label>
+                <select type="text" name="selectPet"
+                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                  <option>selecciona...</option>
+                  <option value=true>Si</option>
+                  <option value=false>No</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="w-full lg:w-4/12 px-4">
+              <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                  fecha de nacimiento*:
+                </label>
+                <input type="date"
+                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  placeholder="jesse@example.com">
+              </div>
+            </div>
+
+            <div class="flex flex-wrap">
+              <div class="w-full lg:w-12/12 px-4">
+                <div class="relative w-full mb-3">
+                  <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                    Cuidados*:
+                  </label>
+                  <textarea type="text"
+                    class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                    rows="4"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap">
+              <div class="w-full lg:w-12/12 px-4">
+                <div class="relative w-full mb-3">
+                  <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                    Descripcion*:
+                  </label>
+                  <textarea type="text"
+                    class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                    rows="4"></textarea>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <hr class="mt-6 border-b-1 border-blueGray-300">
@@ -184,4 +258,3 @@
     </footer>
   </div>
 </section>
- -->
