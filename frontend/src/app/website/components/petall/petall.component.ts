@@ -78,7 +78,6 @@ export class PetallComponent {
       size: null,
       especie: 'PERRO',
       sex: 'MALE',
-      activo: true,
       categoryId: 2,
     };
     this.petallService.create(pet).subscribe((data) => {

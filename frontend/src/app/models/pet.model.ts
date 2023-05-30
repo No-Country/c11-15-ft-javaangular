@@ -22,7 +22,7 @@ export interface Category {
   name: string;
 }
 
-export interface CreateMascota extends Omit<Mascota, 'id' | 'category'> {
+export interface CreateMascota extends Omit<Mascota, 'id' | 'category' | 'activo'> {
   categoryId: number;
 }
 
