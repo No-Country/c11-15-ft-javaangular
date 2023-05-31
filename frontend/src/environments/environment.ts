@@ -13,7 +13,7 @@ export const environment = {
     messagingSenderId: '247574681739',
   },
   production: false,
-  API_URL: 'https://test-petshelter-dev.up.railway.app', /*   https://damp-spire-59848.herokuapp.com este si tiene roles    */
+  API_URL: 'https://c11-15-ft-javaangular-production.up.railway.app', /*   https://damp-spire-59848.herokuapp.com este si tiene roles    */
 };
 
 /*
