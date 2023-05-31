@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/pet")
@@ -24,7 +25,11 @@ public class PetController {
         List<Pet> listPet = petService.findByActivoTrue();
         return new ResponseEntity<>(listPet,HttpStatus.OK);
     }
-
+    @GetMapping("/{id}")
+    public ResponseEntity<PetDTO>getPetForId(@PathVariable Long id){
+        PetDTO petOk = petService.obtenerMascotaId(id);
+        return new ResponseEntity<>(petOk,HttpStatus.OK);
+    }
     @GetMapping("/all")
     public ResponseEntity<List<Pet>> getAll(){
             List<Pet>petList= petService.getAll();

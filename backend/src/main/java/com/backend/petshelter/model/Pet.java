@@ -25,7 +25,8 @@ public class Pet implements Serializable {
     private Long id;
     @NotBlank
     private String nombre;
-    private String foto;
+    @ElementCollection
+    private List<String> fotos;
     private String descripcion;
     private String cuidados;
     private String localidad;
