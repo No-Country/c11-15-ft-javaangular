@@ -23,6 +23,7 @@ public class AccountDetails implements Serializable {
     @Column(name = "accountdetails_uuid")
     private String accountDetailsuuid;
     private String fullName;
+    private String picProfile;
     @Enumerated(EnumType.STRING)
     @Column(name = "identification_type")
     private IdentificationType identificationType;
