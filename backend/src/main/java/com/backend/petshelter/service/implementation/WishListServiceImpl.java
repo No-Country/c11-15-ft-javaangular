@@ -11,9 +11,14 @@ import com.backend.petshelter.repository.WishListRepository;
 import com.backend.petshelter.service.WishListService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class WishListServiceImpl implements WishListService {
@@ -27,19 +32,12 @@ public class WishListServiceImpl implements WishListService {
     @Override
     @Transactional
     public WishListDTO addToWishList(String email, Long petId) {
-        Optional<Account> accountOptional = accountRepository.findByEmail(email);
-        Optional<Pet> petOptional = petRepository.findById(petId);
 
-        if (accountOptional.isEmpty()) {
-            throw new IllegalArgumentException("Account not found for the provided email.");
-        }
+        Account account = accountRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("The account does not exist." + email));
+        Pet pet = petRepository.findById(petId)
+                .orElseThrow(() -> new RuntimeException("Pet not found for the provided ID." + petId));
 
-        if (petOptional.isEmpty()) {
-            throw new IllegalArgumentException("Pet not found for the provided ID.");
-        }
-
-        Account account = accountOptional.get();
-        Pet pet = petOptional.get();
         AccountDetails accountDetails = account.getAccountDetails();
 
         if (accountDetails == null) {
@@ -47,6 +45,7 @@ public class WishListServiceImpl implements WishListService {
         }
 
         WishList wishList = new WishList();
+        wishList.setUuidWishList(UUID.randomUUID().toString());
         wishList.setAccount(account);
         wishList.setPet(pet);
 
@@ -57,5 +56,26 @@ public class WishListServiceImpl implements WishListService {
         wishListDTO.setFullName(accountDetails.getFullName());
 
         return wishListDTO;
+    }
+
+    @Override
+    public List<WishListDTO> getWishListByEmail(String email) {
+        Optional<Account> accountOptional = accountRepository.findByEmail(email);
+        if (accountOptional.isEmpty()) {
+            throw new NotFoundException("Account not found");
+        }
+
+        Account account = accountOptional.get();
+        List<WishList> wishList = wishListRepository.findByAccount(account);
+        List<WishListDTO> wishlistDTOList = new ArrayList<>();
+
+        for (WishList wish : wishList) {
+            WishListDTO wishlistDTO = new WishListDTO();
+            wishlistDTO.setPetName(wish.getPet().getNombre());
+            wishlistDTO.setFullName(wish.getAccount().getAccountDetails().getFullName());
+            wishlistDTOList.add(wishlistDTO);
+        }
+
+        return wishlistDTOList;
     }
 }
