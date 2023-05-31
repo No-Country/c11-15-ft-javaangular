@@ -17,6 +17,7 @@ import java.util.Set;
 public class AccountSecurityDetailsService implements UserDetailsService {
     @Autowired
     private AccountService accountService;
+
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Account account = accountService.findByEmail(email)
@@ -28,7 +29,6 @@ public class AccountSecurityDetailsService implements UserDetailsService {
         accountSignIn.setToken(account.getToken());
         boolean active = account.isActive();
         accountSignIn.setActive(active);
-
 
         Set<GrantedAuthority> authorities = Set.of(SecurityUtils.convertToAuthority(account.getRol().name()));
 

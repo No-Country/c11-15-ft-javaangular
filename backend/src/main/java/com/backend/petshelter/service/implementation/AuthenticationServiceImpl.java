@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 public class AuthenticationServiceImpl implements AuthenticationService {
     @Autowired
     private AuthenticationManager authenticationManager;
-
     @Autowired
     private JwtProvider jwtProvider;
 
