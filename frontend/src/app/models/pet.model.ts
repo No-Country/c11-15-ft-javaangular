@@ -1,12 +1,12 @@
 export interface Mascota {
   id: string;
   nombre: string;
-  foto: string;
+  foto: string[];
   descripcion: string;
   cuidados: string;
   localidad: string;
   contacto: number;
-/*   fechaDeNacimiento: string; */
+  fechaDeNacimiento: string;
   esterilizado: boolean;
   desparacitado: boolean;
   vacunado: boolean;

@@ -10,12 +10,12 @@ export class PetComponent {
   @Input() mascota: Mascota = {
   id: '',
   nombre: '',
-  foto: '',
+  foto: [''],
   descripcion: '',
   cuidados: '',
   localidad: '',
   contacto: 0,
-/*   fechaDeNacimiento: string; */
+  fechaDeNacimiento: '',
   esterilizado: false,
   desparacitado: false,
   vacunado: false,
