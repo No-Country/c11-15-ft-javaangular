@@ -22,6 +22,7 @@ import { PetComponent } from './components/pet/pet.component';
 
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { FormComponent } from './pages/form/form.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { FormComponent } from './pages/form/form.component';
     ProfileComponent,
     PetDetailComponent,
     LayoutComponent,
-    FormComponent
+    FormComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
