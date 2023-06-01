@@ -3,7 +3,6 @@
 </a>
 <h2 class="title">{{ mascota.nombre }}</h2>
 <p>{{ mascota.especie }}</p>
-<p class="category">{{ mascota.desparacitado }}</p>
 <!-- <button (click)="onShowDetail()">Ver detalle</button> -->
 <a routerLink="." [queryParams]="{ pet: mascota.id }">Ver detalle</a>
 <button (click)="onAddToCart()">Add cart</button>

@@ -27,7 +27,6 @@ export class HomeComponent {
     });
     this.route.queryParamMap.subscribe((params) => {
       this.petId = params.get('pet');
-      console.log(this.petId);
     });
   }
 

@@ -12,7 +12,9 @@
         <img [src]="img" alt="">
       </ng-template>
     </swiper>
-    <p>{{ petChosen.descripcion }}</p>
+    <p>descricion: {{ petChosen.descripcion }}</p>
+    <p>cuidados: {{ petChosen.cuidados }}</p>
+    <p>contacto: {{ petChosen.contacto }}</p>
     <button (click)="updateMascota()">editar</button>
     <button (click)="deletePet()">eliminar</button>
   </div>

@@ -10,8 +10,32 @@
     </div>
     <div>
       <h1>{{ mascota.nombre }}</h1>
-      <h2>{{ mascota.especie }}</h2>
-      <p>{{ mascota.descripcion }}</p>
+      <h2>{{ mascota.cuidados}}</h2>
+      <p>{{ mascota.descripcion}}</p>
+      <p>{{ mascota.contacto }}</p>
     </div>
   </div>
 </div>
+
+<!-- <div class="page-product">
+  <button (click)="goToBack()">Volver</button>
+
+  <div class="detail" ngIf="mascota">
+    <img src={{ }} alt=""> -->
+    <!-- Galería de imágenes -->
+    <!-- <div class="gallery">
+      <swiper [slidesPerView]='1'>
+        <ng-template swiperSlide *ngFor="let img of mascota?.fotos">
+          <img [src]="img" alt="Imagen de mascota">
+        </ng-template>
+      </swiper>
+    </div> -->
+
+    <!-- Detalles de la mascota -->
+    <!-- <div>
+      <h1>{{ mascota?.nombre }}</h1>
+      <h2>{{ mascota?.descripcion }}</h2>
+      <p>{{ mascota?.cuidados }}</p>
+    </div>
+  </div>
+</div> -->
