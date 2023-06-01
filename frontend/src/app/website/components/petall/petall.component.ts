@@ -66,7 +66,7 @@ export class PetallComponent {
   createNewProduct() {
     const pet: CreateMascota = {
       nombre: 'labrador',
-      foto: ['https://cdn.shopify.com/s/files/1/0095/4253/3179/files/mobile-banne_-new.jpg?v=1614330110'],
+      fotos: ['https://cdn.shopify.com/s/files/1/0095/4253/3179/files/mobile-banne_-new.jpg?v=1614330110'],
       descripcion: 'ingrsando una nueva mascota',
       cuidados: 'no requiere cuidados',
       localidad: 'Buenos Aires, Argentina',

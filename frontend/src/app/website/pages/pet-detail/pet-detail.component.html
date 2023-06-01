@@ -3,7 +3,7 @@
   <div class="detail" *ngIf="mascota">
     <div class="gallery">
       <swiper [slidesPerView]='1'>
-        <ng-template swiperSlide *ngFor="let img of mascota?.foto">
+        <ng-template swiperSlide *ngFor="let img of mascota?.fotos">
           <img [src]="img" alt="img">
         </ng-template>
       </swiper>

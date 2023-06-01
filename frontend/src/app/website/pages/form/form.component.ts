@@ -49,7 +49,7 @@ export class FormComponent implements OnInit {
   depar = new FormControl("");
   localidad = new FormControl("");
   contacto = new FormControl(0);
-  foto = new FormControl([""]);
+  fotos = new FormControl([""]);
 
   form = new FormGroup({
     nombre: this.nombre,
@@ -68,7 +68,7 @@ export class FormComponent implements OnInit {
     depar: this.depar,
     localidad: this.localidad,
     contacto: this.contacto,
-    foto: this.foto
+    fotos: this.fotos
   });
 
   uploadImage($event: any) {
@@ -109,7 +109,7 @@ export class FormComponent implements OnInit {
       this.form.value.localidad + this.form.value.estado + ", ";
     this.form.value.localidad =
       this.form.value.localidad + this.form.value.depar + " ";
-    this.form.value.foto = this.images
+    this.form.value.fotos = this.images
     delete this.form.value.pais;
     delete this.form.value.estado;
     delete this.form.value.depar;

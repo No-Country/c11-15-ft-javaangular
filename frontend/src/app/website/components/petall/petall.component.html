@@ -8,7 +8,7 @@
     <button (click)="toggleProductDetail()">Close</button>
     <h1>{{ petChosen.nombre }}</h1>
     <swiper [slidesPerView]="1">
-      <ng-template swiperSlide *ngFor="let img of petChosen.foto">
+      <ng-template swiperSlide *ngFor="let img of petChosen.fotos">
         <img [src]="img" alt="">
       </ng-template>
     </swiper>

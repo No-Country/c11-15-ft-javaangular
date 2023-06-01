@@ -1,7 +1,7 @@
 export interface Mascota {
   id: string;
   nombre: string;
-  foto: string[];
+  fotos: string[];
   descripcion: string;
   cuidados: string;
   localidad: string;
