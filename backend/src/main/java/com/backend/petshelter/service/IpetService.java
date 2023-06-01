@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface IpetService{
     public Pet createPet(Pet pet);
-    public PetDTO obtenerMascotaId(Long id);
+    public Optional <Pet> obtenerMascotaId(Long id);
     public PetDTO update(Long id, PetDTO pet);
     public List<Pet>getAll();
      public List<Pet> findByActivoTrue();
