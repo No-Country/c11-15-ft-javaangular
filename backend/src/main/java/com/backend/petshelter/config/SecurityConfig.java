@@ -55,7 +55,6 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests()
                 .requestMatchers(HttpMethod.PUT,"/api/account/change/**").hasRole(Role.ADMIN.name())
-                .requestMatchers(HttpMethod.POST, "/pet").hasRole(Role.USER.name())
                 .requestMatchers("/api/authentication/sign-in",
                         "/api/authentication/sign-up",
                         "/swagger-ui/**",
