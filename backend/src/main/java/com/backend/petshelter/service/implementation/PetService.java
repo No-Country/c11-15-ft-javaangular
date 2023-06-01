@@ -7,9 +7,6 @@ import com.backend.petshelter.repository.PetRepostory;
 import com.backend.petshelter.service.IpetService;
 
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeMap;
-import org.modelmapper.config.Configuration;
-import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -17,6 +14,7 @@ import org.springframework.validation.annotation.Validated;
 
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -33,6 +31,16 @@ public class PetService implements IpetService {
      /*Pet pet = modelMapper.map(petdto, Pet.class);*/
      petRepostory.save(pet);
       return pet;
+    }
+
+    @Override
+    public PetDTO obtenerMascotaId(Long id) {
+        Pet petBuscada = petRepostory.getReferenceById(id);
+        if(petBuscada != null){
+            petBuscada.getClass();
+            }
+        PetDTO petEncontrada  = modelMapper.map(petBuscada,PetDTO.class);
+        return petEncontrada;
     }
 
     @Override
