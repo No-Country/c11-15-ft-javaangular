@@ -28,3 +28,6 @@ Puedes acceder a la Test Suite del módulo Quiero Adoptar en el siguiente enlace
 
 ## Test Suite Formulario Dar En Adopción.
 Puedes acceder a la Test Suite del módulo Formulario Dar En Adopción en el siguiente enlace: [Test Suite Quiero Adoptar](https://docs.google.com/spreadsheets/d/1_loxyrDfJswr2Uuk6YGzHmpGHVE3oeH2QMeJtJW9BC0/edit?usp=sharing)
+
+## Test Suite Cuenta/Perfil de Usuario.
+Puedes acceder a la Test Suite del módulo Cuenta/Perfil de Usuario en el siguiente enlace: [Test Suite Cuenta/Perfil de Usuario](https://docs.google.com/spreadsheets/d/1WbMYMdKxC2GHnHV7qeG6MHwbazyDvgS5LH8E88fLHBs/edit?usp=sharing)
