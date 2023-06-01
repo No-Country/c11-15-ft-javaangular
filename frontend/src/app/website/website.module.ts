@@ -23,6 +23,7 @@ import { PetComponent } from './components/pet/pet.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { FormComponent } from './pages/form/form.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormInfoComponent } from './pages/form-info/form-info.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { FooterComponent } from './components/footer/footer.component';
     PetDetailComponent,
     LayoutComponent,
     FormComponent,
-    FooterComponent
+    FooterComponent,
+    FormInfoComponent
   ],
   imports: [
     CommonModule,

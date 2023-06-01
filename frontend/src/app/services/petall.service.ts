@@ -71,14 +71,14 @@ export class PetallService {
   }
 
   create(dto: CreateMascota) {
-    return this.http.post<Mascota>(`${this.apiUrl}/products`, dto);
+    return this.http.post<Mascota>(`${this.apiUrl}/pet`, dto);
   }
 
   update(id: string, dto: UpdateMascota) {
-    return this.http.put<Mascota>(`${this.apiUrl}/products/${id}`, dto);
+    return this.http.put<Mascota>(`${this.apiUrl}/pet/${id}`, dto);
   }
 
   delete(id: string) {
-    return this.http.delete<boolean>(`${this.apiUrl}/products/${id}`);
+    return this.http.delete<boolean>(`${this.apiUrl}/pet/${id}`);
   }
 }

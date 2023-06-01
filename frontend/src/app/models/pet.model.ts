@@ -23,7 +23,6 @@ export interface Category {
 }
 
 export interface CreateMascota extends Omit<Mascota, 'id' | 'category' | 'activo'> {
-  categoryId: number;
 }
 
 export interface UpdateMascota extends Partial<CreateMascota> {}

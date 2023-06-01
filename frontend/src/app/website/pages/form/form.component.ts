@@ -1,3 +1,4 @@
+import { PetallService } from 'src/app/services/petall.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
@@ -8,6 +9,7 @@ import {
   listAll,
   getDownloadURL,
 } from '@angular/fire/storage';
+import { CreateMascota, Mascota } from 'src/app/models/pet.model';
 
 @Component({
   selector: 'app-form',
@@ -18,7 +20,10 @@ export class FormComponent implements OnInit {
   images: string[];
   imgRef: string = '';
 
-  constructor(private storage: Storage) {
+  constructor(
+    private storage: Storage,
+    private petallService: PetallService
+    ) {
     this.images = [];
   }
 
@@ -28,23 +33,23 @@ export class FormComponent implements OnInit {
     this.getImages();
   }
 
-  nombre = new FormControl('');
-  especie = new FormControl('');
-  sex = new FormControl('');
+  nombre = new FormControl("");
+  especie = new FormControl("");
+  sex = new FormControl("");
   vacunado = new FormControl(false);
   desparacitado = new FormControl(false);
   esterilizado = new FormControl(false);
-  fechaDeNacimiento = new FormControl('');
-  nivelActividad = new FormControl('');
-  size = new FormControl('');
-  descripcion = new FormControl('');
-  cuidados = new FormControl('');
-  pais = new FormControl('');
-  estado = new FormControl('');
-  depar = new FormControl('');
-  localidad = new FormControl('');
-  contacto = new FormControl();
-  foto = new FormControl([''])
+  fechaDeNacimiento = new FormControl("");
+  nivelActividad = new FormControl("");
+  size = new FormControl("");
+  descripcion = new FormControl("");
+  cuidados = new FormControl("");
+  pais = new FormControl("");
+  estado = new FormControl("");
+  depar = new FormControl("");
+  localidad = new FormControl("");
+  contacto = new FormControl(0);
+  foto = new FormControl([""]);
 
   form = new FormGroup({
     nombre: this.nombre,
@@ -99,15 +104,18 @@ export class FormComponent implements OnInit {
   }
 
   registerPet() {
-    this.form.value.localidad = this.form.value.pais + ', ';
+    this.form.value.localidad = this.form.value.pais + ", ";
     this.form.value.localidad =
-      this.form.value.localidad + this.form.value.estado + ', ';
+      this.form.value.localidad + this.form.value.estado + ", ";
     this.form.value.localidad =
-      this.form.value.localidad + this.form.value.depar + ' ';
+      this.form.value.localidad + this.form.value.depar + " ";
     this.form.value.foto = this.images
     delete this.form.value.pais;
     delete this.form.value.estado;
     delete this.form.value.depar;
     console.log(this.form.value);
+    this.petallService.create(<CreateMascota>this.form.value).subscribe((data) => {
+      console.log('created', data);
+    });
   }
 }
