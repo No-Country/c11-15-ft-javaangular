@@ -13,6 +13,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { AuthGuard } from '../guards/auth.guard';
 import { FormComponent } from './pages/form/form.component';
 import { FormInfoComponent } from './pages/form-info/form-info.component';
+import { AutenticacionComponent } from './pages/autenticacion/autenticacion.component';
 
 const routes: Routes = [
   {
@@ -49,7 +50,7 @@ const routes: Routes = [
       },
       {
         path: 'profile',
-        canActivate: [ AuthGuard ],
+        canActivate: [AuthGuard],
         component: ProfileComponent,
         pathMatch: 'full',
         title: 'profile',
@@ -58,14 +59,14 @@ const routes: Routes = [
         path: 'form-info',
         component: FormInfoComponent,
         pathMatch: 'full',
-        title: 'formulario'
+        title: 'formulario',
       },
       {
         path: 'form',
-        canActivate: [ AuthGuard ],
+        canActivate: [AuthGuard],
         component: FormComponent,
         pathMatch: 'full',
-        title: 'formulario'
+        title: 'formulario',
       },
     ],
   },
@@ -80,6 +81,12 @@ const routes: Routes = [
     component: RegisterComponent,
     pathMatch: 'full',
     title: 'register user',
+  },
+  {
+    path: 'authentication/:clave',
+    component: AutenticacionComponent,
+    pathMatch: 'full',
+    title: 'Verification',
   },
 ];
 

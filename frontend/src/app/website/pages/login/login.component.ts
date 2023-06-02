@@ -26,7 +26,6 @@ export class LoginComponent {
   })
 
   login(){
-    console.log(this.form.value.email);
     this.authService.loginAndGet(this.form.value.email + '' , this.form.value.password + '')
     .subscribe(res=>{
       this.profile = res;

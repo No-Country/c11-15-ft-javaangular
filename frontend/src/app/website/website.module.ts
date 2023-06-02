@@ -23,6 +23,7 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { FormComponent } from './pages/form/form.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormInfoComponent } from './pages/form-info/form-info.component';
+import { AutenticacionComponent } from './pages/autenticacion/autenticacion.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { FormInfoComponent } from './pages/form-info/form-info.component';
     LayoutComponent,
     FormComponent,
     FooterComponent,
-    FormInfoComponent
+    FormInfoComponent,
+    AutenticacionComponent
   ],
   imports: [
     CommonModule,
