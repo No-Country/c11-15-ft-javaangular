@@ -7,12 +7,14 @@ import com.backend.petshelter.util.enums.Size;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class PetDTO {
 
     @NotBlank
     private String nombre;
-    private String foto;
+    private List<String> fotos;
     private String descripcion;
     private String cuidados;
     private String localidad;

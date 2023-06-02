@@ -26,8 +26,8 @@ public class PetController {
         return new ResponseEntity<>(listPet,HttpStatus.OK);
     }
     @GetMapping("/{id}")
-    public ResponseEntity<PetDTO>getPetForId(@PathVariable Long id){
-        PetDTO petOk = petService.obtenerMascotaId(id);
+    public ResponseEntity<Optional<Pet>>getPetForId(@PathVariable Long id){
+        Optional<Pet> petOk = petService.obtenerMascotaId(id);
         return new ResponseEntity<>(petOk,HttpStatus.OK);
     }
     @GetMapping("/all")

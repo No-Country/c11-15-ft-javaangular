@@ -34,13 +34,9 @@ public class PetService implements IpetService {
     }
 
     @Override
-    public PetDTO obtenerMascotaId(Long id) {
-        Pet petBuscada = petRepostory.getReferenceById(id);
-        if(petBuscada != null){
-            petBuscada.getClass();
-            }
-        PetDTO petEncontrada  = modelMapper.map(petBuscada,PetDTO.class);
-        return petEncontrada;
+    public Optional<Pet> obtenerMascotaId(Long id) {
+      Optional<Pet> pet = petRepostory.findById(id);
+       return pet;
     }
 
     @Override
