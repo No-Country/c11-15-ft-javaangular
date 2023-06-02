@@ -38,14 +38,14 @@ export class AppComponent implements OnInit {
     this.showImg = !this.showImg;
   }
 
-  createUser() {
+/*   createUser() {
     this.usersService.create({
-      name: 'sebas',
+      name: 'sebas'i,
       email: 'sebas1@mail.com',
       password: '11212'
     })
     .subscribe(rta => {
       console.log(rta);
     });
-  }
+  } */
 }
