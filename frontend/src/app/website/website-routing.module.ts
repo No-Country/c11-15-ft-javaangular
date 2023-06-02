@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
-import { CategoryComponent } from './pages/category/category.component';
 import { MylistpetComponent } from './pages/mylistpet/mylistpet.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -29,12 +28,6 @@ const routes: Routes = [
         path: 'home',
         component: HomeComponent,
         title: 'home',
-      },
-      {
-        path: 'category/:id',
-        component: CategoryComponent,
-        pathMatch: 'full',
-        title: 'categoria',
       },
       {
         path: 'pet/:id',

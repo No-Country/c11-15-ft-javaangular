@@ -4,7 +4,6 @@ import { SwiperModule } from 'swiper/angular';
 
 import { WebsiteRoutingModule } from './website-routing.module';
 
-import { CategoryComponent } from './pages/category/category.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ImgComponent } from './components/img/img.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -35,7 +34,6 @@ import { FormInfoComponent } from './pages/form-info/form-info.component';
     ImgComponent,
     PetComponent,
     PetallComponent,
-    CategoryComponent,
     MylistpetComponent,
     RecoveryComponent,
     ProfileComponent,

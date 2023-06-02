@@ -39,7 +39,6 @@ export class PetallComponent {
   onAddToShoppingCart(mascota: Mascota) {
     this.storeService.addProduct(mascota);
     this.total = this.storeService.getTotal();
-    console.log(mascota);
   }
 
   toggleProductDetail() {

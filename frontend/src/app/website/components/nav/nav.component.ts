@@ -1,4 +1,3 @@
-import { CategoriesService } from '../../../services/categories.service';
 import { Component, OnInit } from '@angular/core';
 
 import { StoreService } from '../../../services/store.service'
@@ -22,7 +21,6 @@ export class NavComponent implements OnInit {
   constructor(
     private storeService: StoreService,
     private authService: AuthService,
-    private categoriesService: CategoriesService,
     private router: Router,
   ) { }
 
@@ -30,7 +28,6 @@ export class NavComponent implements OnInit {
     this.storeService.myPet$.subscribe(products => {
       this.counter = products.length;
     });
-    this.getAllCategories();
     this.authService.user$
     .subscribe(data => {
       this.profile = data
@@ -45,13 +42,6 @@ export class NavComponent implements OnInit {
     this.authService.loginAndGet('john@mail.com', 'changeme')
     .subscribe(() => {
       this.router.navigate(['/profile']);
-    });
-  }
-
-  getAllCategories() {
-    this.categoriesService.getAll()
-    .subscribe(data => {
-      this.categories = data;
     });
   }
 

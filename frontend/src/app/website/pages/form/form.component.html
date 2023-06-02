@@ -25,6 +25,21 @@
                 <input type="text" id="name" formControlName="nombre"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   placeholder="nombre">
+                <div *ngIf="form.controls.nombre.errors &&(form.controls.nombre.touched || form.controls.nombre.dirty)"
+                  class="alert alert-danger">
+                  <div *ngIf="form.controls.nombre.errors['required']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold">El nombre es requerido</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -44,6 +59,22 @@
                   <option value="PEZ">Pez</option>
                   <option value="OTRO">Otro</option>
                 </select>
+                <div
+                  *ngIf="form.controls.especie.errors &&(form.controls.especie.touched || form.controls.especie.dirty)"
+                  class="alert alert-danger">
+                  <div *ngIf="form.controls.especie.errors['required']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold">La especie es requerida</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -57,6 +88,21 @@
                   <option value="MALE">Niño</option>
                   <option value="FEMALE">Niña</option>
                 </select>
+                <div *ngIf="form.controls.sex.errors &&(form.controls.sex.touched || form.controls.sex.dirty)"
+                  class="alert alert-danger">
+                  <div *ngIf="form.controls.sex.errors['required']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold">El sexo es requerido</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -118,6 +164,21 @@
                   <option value="MEDIANO">Mediano</option>
                   <option value="GRANDE">Grande</option>
                 </select>
+                <div *ngIf="form.controls.size.errors &&(form.controls.size.touched || form.controls.size.dirty)"
+                  class="alert alert-danger">
+                  <div *ngIf="form.controls.size.errors['required']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold">El tamaño es requerido</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -129,6 +190,22 @@
                 <textarea type="text" formControlName="descripcion"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   placeholder="Ecribe aqui" rows="4"></textarea>
+                <div
+                  *ngIf="form.controls.descripcion.errors &&(form.controls.descripcion.touched || form.controls.descripcion.dirty)"
+                  class="alert alert-danger">
+                  <div *ngIf="form.controls.descripcion.errors['required']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold">La descripcion es requerida</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -140,6 +217,22 @@
                 <textarea type="text" formControlName="cuidados"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   placeholder="Escribe aqui" rows="4"></textarea>
+                <div
+                  *ngIf="form.controls.cuidados.errors &&(form.controls.cuidados.touched || form.controls.cuidados.dirty)"
+                  class="alert alert-danger">
+                  <div *ngIf="form.controls.cuidados.errors['required']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold">Adicionar como minimo un cuidado es requerido</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -160,6 +253,21 @@
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                   <option value="Argentina">Argentina</option>
                 </select>
+                <div *ngIf="form.controls.pais.errors &&(form.controls.pais.touched || form.controls.pais.dirty)"
+                  class="alert alert-danger">
+                  <div *ngIf="form.controls.pais.errors['required']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold">El lugar es requerido</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -172,6 +280,21 @@
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                   <option value="Buenos Aires">Buenos Aires</option>
                 </select>
+                <div *ngIf="form.controls.estado.errors &&(form.controls.estado.touched || form.controls.estado.dirty)"
+                  class="alert alert-danger">
+                  <div *ngIf="form.controls.estado.errors['required']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold">El lugar es requerido</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -186,6 +309,21 @@
                   <option value="Recoleta">Recoleta</option>
                   <option value="Mar del Plata">Mar del Plata</option>
                 </select>
+                <div *ngIf="form.controls.depar.errors &&(form.controls.depar.touched || form.controls.depar.dirty)"
+                  class="alert alert-danger">
+                  <div *ngIf="form.controls.depar.errors['required']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold">El nombre es requerido</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -197,6 +335,34 @@
                 <input type="number" id="contacto" formControlName="contacto"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   placeholder="contacto">
+                <div
+                  *ngIf="form.controls.contacto.errors &&(form.controls.contacto.touched || form.controls.contacto.dirty)"
+                  class="alert alert-danger">
+                  <div *ngIf="form.controls.contacto.errors['required']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold">El numero es requerido</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div *ngIf="form.controls.contacto.errors['min']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold">El numero es requerido</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -225,26 +391,72 @@
             <div class="w-full lg:w-12/12 px-4">
               <div class="relative w-full mb-3">
                 <div class="flex flex-row gap-3">
-
                   <label class="block uppercase text-gray-600 text-xs font-bold mb-2">
-                    <input type="checkbox" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                    <input type="checkbox" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                      formControlName="termino">
                     * Acepto termino y condiciones
                   </label>
                 </div>
-                <div class="flex flex-row gap-3">
+                <div
+                  *ngIf="form.controls.termino.errors &&(form.controls.termino.touched || form.controls.termino.dirty)"
+                  class="alert alert-danger">
+                  <div *ngIf="form.controls.termino.errors['required']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold"> Es requerido</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
 
+                <div class="flex flex-row gap-3">
                   <label class="block uppercase text-gray-600 text-xs font-bold mb-2">
-                    <input name="push-notifications" type="checkbox"
-                      class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                    <input type="checkbox" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600" formControlName="datos">
                     * Acepto tratamiento de datos
                   </label>
                 </div>
+                <div
+                  *ngIf="form.controls.datos.errors &&(form.controls.datos.touched || form.controls.datos.dirty)"
+                  class="alert alert-danger">
+                  <div *ngIf="form.controls.datos.errors['required']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold"> Es requerido</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
                 <div class="flex flex-row gap-3">
                   <label class="block uppercase text-gray-600 text-xs font-bold mb-2">
-                    <input name="push-notifications" type="checkbox"
-                      class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                    <input type="checkbox" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600" formControlName="novedades">
                     * Enviarme novedades al correo
                   </label>
+                </div>
+                <div
+                  *ngIf="form.controls.novedades.errors &&(form.controls.novedades.touched || form.controls.novedades.dirty)"
+                  class="alert alert-danger">
+                  <div *ngIf="form.controls.novedades.errors['required']"
+                    class="bg-red-100 border border-red-400 text-red-700 px-4 py-3  relative" role="alert">
+                    <strong class="font-bold"> Es requerido</strong>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path
+                          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

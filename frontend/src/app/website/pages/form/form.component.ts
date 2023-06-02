@@ -10,6 +10,7 @@ import {
   getDownloadURL,
 } from '@angular/fire/storage';
 import { CreateMascota, Mascota } from 'src/app/models/pet.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -22,8 +23,9 @@ export class FormComponent implements OnInit {
 
   constructor(
     private storage: Storage,
-    private petallService: PetallService
-    ) {
+    private petallService: PetallService,
+    private router: Router
+  ) {
     this.images = [];
   }
 
@@ -33,23 +35,26 @@ export class FormComponent implements OnInit {
     this.getImages();
   }
 
-  nombre = new FormControl("");
-  especie = new FormControl("");
-  sex = new FormControl("");
+  nombre = new FormControl('', Validators.required);
+  especie = new FormControl('', Validators.required);
+  sex = new FormControl('', Validators.required);
   vacunado = new FormControl(false);
   desparacitado = new FormControl(false);
   esterilizado = new FormControl(false);
-  fechaDeNacimiento = new FormControl("");
-  nivelActividad = new FormControl("");
-  size = new FormControl("");
-  descripcion = new FormControl("");
-  cuidados = new FormControl("");
-  pais = new FormControl("");
-  estado = new FormControl("");
-  depar = new FormControl("");
-  localidad = new FormControl("");
-  contacto = new FormControl(0);
-  fotos = new FormControl([""]);
+  fechaDeNacimiento = new FormControl('');
+  nivelActividad = new FormControl('');
+  size = new FormControl('', Validators.required);
+  descripcion = new FormControl('', Validators.required);
+  cuidados = new FormControl('', Validators.required);
+  pais = new FormControl('', Validators.required);
+  estado = new FormControl('', Validators.required);
+  depar = new FormControl('', Validators.required);
+  localidad = new FormControl('');
+  contacto = new FormControl(0, (Validators.required, CustomValidators.min(8)));
+  fotos = new FormControl(['']);
+  termino = new FormControl(false, Validators.requiredTrue);
+  datos = new FormControl(false, Validators.requiredTrue);
+  novedades = new FormControl(false, Validators.requiredTrue);
 
   form = new FormGroup({
     nombre: this.nombre,
@@ -68,7 +73,10 @@ export class FormComponent implements OnInit {
     depar: this.depar,
     localidad: this.localidad,
     contacto: this.contacto,
-    fotos: this.fotos
+    fotos: this.fotos,
+    termino: this.termino,
+    datos: this.datos,
+    novedades: this.novedades,
   });
 
   uploadImage($event: any) {
@@ -91,7 +99,6 @@ export class FormComponent implements OnInit {
 
     listAll(imagesRef)
       .then(async (response) => {
-
         for (let item of response.items) {
           if (item.fullPath === this.imgreferent.fullPath) {
             const url = await getDownloadURL(item);
@@ -104,18 +111,27 @@ export class FormComponent implements OnInit {
   }
 
   registerPet() {
-    this.form.value.localidad = this.form.value.pais + ", ";
+    this.form.value.localidad = this.form.value.pais + ', ';
     this.form.value.localidad =
-      this.form.value.localidad + this.form.value.estado + ", ";
+      this.form.value.localidad + this.form.value.estado + ', ';
     this.form.value.localidad =
-      this.form.value.localidad + this.form.value.depar + " ";
-    this.form.value.fotos = this.images
+      this.form.value.localidad + this.form.value.depar + ' ';
+    this.form.value.fotos = this.images;
     delete this.form.value.pais;
     delete this.form.value.estado;
     delete this.form.value.depar;
+    delete this.form.value.termino;
+    delete this.form.value.datos;
+    delete this.form.value.novedades;
     console.log(this.form.value);
-    this.petallService.create(<CreateMascota>this.form.value).subscribe((data) => {
-      console.log('created', data);
-    });
+    this.petallService.create(<CreateMascota>this.form.value).subscribe(
+      (res) => {
+        alert('se registro exitosamente');
+        this.router.navigate(['home']);
+      },
+      (err) => {
+        alert('ocurrio un error');
+      }
+    );
   }
 }

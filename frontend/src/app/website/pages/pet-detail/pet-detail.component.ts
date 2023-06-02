@@ -34,7 +34,6 @@ export class PetDetailComponent implements OnInit {
       )
       .subscribe((data) => {
         this.mascota = data;
-        console.log(this.mascota?.fotos[1])
       });
   }
 

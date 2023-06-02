@@ -3,6 +3,7 @@
   <div class="detail" *ngIf="mascota">
     <div class="gallery">
       <swiper [slidesPerView]='1'>
+        <img src="https://s1.eestatic.com/2020/08/26/curiosidades/mascotas/mascotas-perros-gatos_515959375_158488465_1706x960.jpg" alt="">
         <ng-template swiperSlide *ngFor="let img of mascota?.fotos">
           <img [src]="img" alt="img">
         </ng-template>
