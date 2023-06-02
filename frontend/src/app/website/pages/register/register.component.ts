@@ -36,8 +36,8 @@ export class RegisterComponent {
     console.log(this.form.value);
     this.usersService.create({
       "email": this.form.value.email + "",
-      "name": this.form.value.name + "",
-      "password": this.form.value.password + ""
+      "password": this.form.value.password + "",
+      "accountDetails": { "fullName": this.form.value.name + "" }
     }).subscribe(
       (res) => {
         alert('registrado exitosamente');
