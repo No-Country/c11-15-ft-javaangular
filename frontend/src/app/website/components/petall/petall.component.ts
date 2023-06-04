@@ -6,6 +6,9 @@ import {
 } from 'src/app/models/pet.model';
 import { StoreService } from '../../../services/store.service';
 import { PetallService } from 'src/app/services/petall.service';
+import Swiper, { Virtual } from 'swiper';
+
+Swiper.use([Virtual])
 
 @Component({
   selector: 'app-petall',

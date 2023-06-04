@@ -4,5 +4,5 @@
 <h2 class="title">{{ mascota.nombre }}</h2>
 <p>{{ mascota.especie }}</p>
 <!-- <button (click)="onShowDetail()">Ver detalle</button> -->
-<a routerLink="." [queryParams]="{ pet: mascota.id }">Ver detalle</a>
-<button (click)="onAddToCart()">Add cart</button>
+<a routerLink="." [queryParams]="{ pet: mascota.id }" class="bg-cyan-500 shadow-lg shadow-cyan-500/50 m-3 rounded-sm h-3">Ver detalle</a>
+<button (click)="onAddToCart()" class="bg-cyan-500 shadow-lg shadow-cyan-500/50 m-3 rounded-sm">Add cart</button>
