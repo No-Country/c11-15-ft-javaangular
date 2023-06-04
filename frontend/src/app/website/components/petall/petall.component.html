@@ -1,6 +1,6 @@
 <div class="products--grid">
   <app-pet [mascota]="mascota" *ngFor="let mascota of mascotas" (addedProduct)="onAddToShoppingCart($event)"
-    (showdProduct)="onShowDetail($event)" class="shadow-lg shadow-black animate-flip-down animate-once animate-duration-[2500ms] animate-delay-1000"></app-pet>
+    (showdProduct)="onShowDetail($event)" class="shadow-lg shadow-black"></app-pet>
   <button (click)="onloadMore()">Load More</button>
 </div>
 <div class="product-detail" [class.active]="showProductDetail">
