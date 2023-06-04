@@ -11,18 +11,3 @@
   background: #FDFAF3;
 }
 
-.products--grid app-img img {
-  border-radius: 10px;
-  max-height: 200px;
-}
-.product-detail {
-  padding: 0.5em;
-}
-.product-detail .swiper-slide {
-  height: 200px;
-  display: flex;
-  align-items: center;
-}
-.product-detail .swiper-slide img {
-  width: 100%;
-}

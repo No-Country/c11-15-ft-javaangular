@@ -2,41 +2,43 @@
   <button (click)="goToBack()">Back</button>
   <div class="detail" *ngIf="mascota">
     <div class="gallery">
-      <swiper [slidesPerView]='1'>
-        <img src="https://s1.eestatic.com/2020/08/26/curiosidades/mascotas/mascotas-perros-gatos_515959375_158488465_1706x960.jpg" alt="">
+      <swiper [slidesPerView]="1" [spaceBetween]="-2" [virtual]="true">
         <ng-template swiperSlide *ngFor="let img of mascota?.fotos">
-          <img [src]="img" alt="img">
+          <img [src]="img" alt="img" class="origin-bottom -rotate-12">
         </ng-template>
       </swiper>
     </div>
     <div>
-      <h1>{{ mascota.nombre }}</h1>
-      <h2>{{ mascota.cuidados}}</h2>
-      <p>{{ mascota.descripcion}}</p>
-      <p>{{ mascota.contacto }}</p>
+      <h1>Hola! me llamo: <p class="animate-bounce w-6 h-6 text-blue-700 mb-5">{{ mascota.nombre }}</p>
+        <p>soy un {{ mascota.especie }} : <strong *ngIf="mascota.sex === 'MALE'; else female">chico</strong><ng-template
+            #female><strong>chica</strong></ng-template> </p>
+      </h1>
+      <h2>Me describo como:</h2>
+      <p class="text-justify text-amber-800">{{ mascota.descripcion}}</p>
+      <h2>Requiero de estos cuidados:</h2>
+      <p class="text-justify text-amber-800">{{ mascota.cuidados}}</p>
+      <h2>Que en donde me encuentro</h2>
+      <p class="text-justify text-amber-800">{{ mascota.localidad }}</p>
+      <h2>Acuerdate de mi cumpleaños! yo naci el:</h2>
+      <p class="animate-pulse text-blue-700"><strong>{{ mascota.fechaDeNacimiento | date:'mediumDate' }}</strong></p>
+      <h2>mi nivel de actividad es:</h2>
+      <ng-container [ngSwitch]="true">
+        <p *ngSwitchCase="mascota.nivelActividad === 'BAJO' " class="text-justify text-amber-800">De solo -20 min de
+          ejercicio</p>
+        <p *ngSwitchCase="mascota.nivelActividad === 'MODERADO' " class="text-justify text-amber-800">De 20 a 30 min de
+          ejercicio</p>
+        <p *ngSwitchCase="mascota.nivelActividad === 'ALTO' " class="text-justify text-amber-800">De mas de 30 min de
+          ejercicio</p>
+      </ng-container>
+      <h3>recuerda que soy <p class="animate-bounce w-6 h-6 text-red-700">{{ mascota.size }}</p></h3>
+      <p><strong class="animate-pulse text-blue-900" *ngIf="mascota.vacunado === true; else second"> si</strong><ng-template
+          #second><strong class="animate-pulse text-red-900">no</strong></ng-template> estoy vacunado</p>
+      <p><strong class="animate-pulse text-blue-900" *ngIf="mascota.esterilizado === true; else second"> si</strong><ng-template
+          #second><strong class="animate-pulse text-red-900">no</strong></ng-template> estoy esterilizado</p>
+      <p><strong class="animate-pulse text-blue-900" *ngIf="mascota.desparacitado === true; else second"> si</strong><ng-template
+          #second><strong class="animate-pulse text-red-900">no</strong></ng-template> estoy desparacitado</p>
+      <h3>si llegaste hasta aqui es por que estas interesado en mi que emosion: me puedes contactar al siguiente numero</h3>
+      <h2 class="animate-bounce w-6 h-6 text-gren-700">{{ mascota.contacto }}</h2>
     </div>
   </div>
 </div>
-
-<!-- <div class="page-product">
-  <button (click)="goToBack()">Volver</button>
-
-  <div class="detail" ngIf="mascota">
-    <img src={{ }} alt=""> -->
-    <!-- Galería de imágenes -->
-    <!-- <div class="gallery">
-      <swiper [slidesPerView]='1'>
-        <ng-template swiperSlide *ngFor="let img of mascota?.fotos">
-          <img [src]="img" alt="Imagen de mascota">
-        </ng-template>
-      </swiper>
-    </div> -->
-
-    <!-- Detalles de la mascota -->
-    <!-- <div>
-      <h1>{{ mascota?.nombre }}</h1>
-      <h2>{{ mascota?.descripcion }}</h2>
-      <p>{{ mascota?.cuidados }}</p>
-    </div>
-  </div>
-</div> -->

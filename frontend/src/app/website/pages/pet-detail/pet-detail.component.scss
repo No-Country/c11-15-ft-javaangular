@@ -8,6 +8,13 @@
       overflow: hidden;
       width: 100%;
     }
+    swiper ng-template {
+      background-position: center;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
     h2,
     h1 {
       margin-bottom: 5px;

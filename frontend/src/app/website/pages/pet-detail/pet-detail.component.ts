@@ -5,6 +5,9 @@ import { switchMap } from 'rxjs/operators';
 
 import { Mascota } from 'src/app/models/pet.model';
 import { PetallService } from 'src/app/services/petall.service';
+import Swiper, { Virtual } from 'swiper';
+
+Swiper.use([Virtual])
 
 @Component({
   selector: 'app-pet-detail',
