@@ -24,7 +24,7 @@ export class UsersService {
   }
 
   activacion(data: any) {
-    return this.http.get<any>(`${this.apiUrl}/api/account/verify/`, data)
+    return this.http.get<any>(`${this.apiUrl}/api/account/verify/${data}`)
   }
   /*  getAll() {
     return this.http.get<User[]>(this.apiUrl)

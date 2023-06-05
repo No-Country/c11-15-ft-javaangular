@@ -16,10 +16,10 @@
         <span class="inline-block bg-gray-200 rounded-full px-4 py-2 text-sm font-semibold text-gray-700 mr-4 mb-4">{{
           dto.cuidados }}</span>
         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
-          <p class="bg-gray-200 m-0 p-0 rounded-full"><strong class="bg-gray-200 m-0 p-0" *ngIf="dto.vacunado === true; else second">
+          <p class="bg-gray-200 m-0 p-0 rounded-full"><strong class="bg-gray-200 m-0 p-0 rounded-full" *ngIf="dto.vacunado === true; else second">
               si</strong><ng-template #second><strong class="bg-gray-200 m-0 p-0">no</strong></ng-template> estoy
             vacunado</p>
-          <p><strong *ngIf="dto.esterilizado === true; else second">
+          <p><strong *ngIf="dto.esterilizado === true; else second" class="bg-gray-200 m-0 p-0">
               si</strong><ng-template #second><strong>no</strong></ng-template> estoy
             esterilizado</p>
           <p><strong *ngIf="dto.desparacitado === true; else second">
