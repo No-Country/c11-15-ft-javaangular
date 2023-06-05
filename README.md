@@ -8,7 +8,7 @@ El equipo detrás de Mascota en Casa está conformado por talentosos profesional
 
 ### ⚡ Links del Proyecto:
 
-<h3><a href="https://www.figma.com/file/aYon5R5ryIkeNFeOVFIrqM/No-country---Wireframes?type=design&node-id=0-1&t=xnb1TCtnGFhKKKwX-0"> <img src="https://img.shields.io/badge/Figma-%23F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white"/></a> <a href="https://mascotasencasa-eb90d.web.app/"> <img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-built_white.png?hl=es-419" width="100" height="40"/></a> <a href="c11-15-ft-javaangular-production.up.railway.app"> <img src="https://railway.app/brand/logotype-dark.png" width="100" height="40"/></a></h3>
+<h3><a href="https://www.figma.com/file/aYon5R5ryIkeNFeOVFIrqM/No-country---Wireframes?type=design&node-id=0-1&t=xnb1TCtnGFhKKKwX-0"> <img src="https://img.shields.io/badge/Figma-%23F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white"/></a> <a href="https://mascotasencasa-eb90d.web.app/"> <img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-built_white.png?hl=es-419" width="100" height="40"/></a> <a href="c11-15-ft-javaangular-production.up.railway.app"> <img src="https://img.shields.io/badge/Railway-ffffff?style=for-the-badge&logo=Railway&logoColor=000000"/></a></h3>
 <hr/>
 
 ### ⚛️ Front End:
@@ -24,8 +24,8 @@ El equipo detrás de Mascota en Casa está conformado por talentosos profesional
 
 #### 🧑‍💻 Developers:
 
-| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| <img src="https://cdn.discordapp.com/attachments/442011718235848707/1108045181778935819/PhotoRoom-20230414_152536.png" width=50>| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>|
-|:-:|:-:|:-:|:-:|
+| <img src="https://avatars.githubusercontent.com/u/91088016?v=4" width=50>| 
+|:-:|
 | **Jhon Pulido**| 
 | <a href="https://github.com/jhonpulido1990"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/jhon-jairo-pulido-462a9066/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
