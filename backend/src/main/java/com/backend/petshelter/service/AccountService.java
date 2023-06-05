@@ -15,6 +15,8 @@ public interface AccountService {
 
     void sendVerificationCodeToEmail(Account account) throws MessagingException, UnsupportedEncodingException;
 
+    void sendPasswordRecoveryToEmail(Account account) throws MessagingException, UnsupportedEncodingException;
+
     Optional<Account> findByEmail(String email);
 
     @Transactional
