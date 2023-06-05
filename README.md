@@ -48,7 +48,7 @@ El equipo detrás de Mascota en Casa está conformado por talentosos profesional
 
 
 | <img src="https://media.licdn.com/dms/image/D4E03AQGfAu3Acv7-xg/profile-displayphoto-shrink_800_800/0/1679235835959?e=1691625600&v=beta&t=5YVBHZit1Qu38GqLioQo0MdU7FERG1w8zT0ZICWRzYE" width=50>| <img src="https://media.licdn.com/dms/image/D4D03AQHWH4Q7zclgnw/profile-displayphoto-shrink_800_800/0/1678309544307?e=1691625600&v=beta&t=XVs8wm00zZ-Iq-hzoJhisMTaDZa0avpPjAQ3WVIZNpQ" width=50>| <img src="https://www.nicepng.com/png/full/128-1280406_user-icon-png.png" width=50>| 
-|:-:|:-:|:-:|
+|:-:|:-:|
 | **Alfonso Almonte**| **Diego Villán**| 
 | <a href="https://github.com/j3v1t0"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/alfonso-almonte-a7640485/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="#"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="#"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | 
 
