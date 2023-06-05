@@ -31,7 +31,15 @@ public class AccountController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
-
+    @GetMapping("findallcustomerlist")
+    public ResponseEntity<?> getAllUsersDetails(@AuthenticationPrincipal AccountPrincipal accountPrincipal){
+        Account account = accountService.findByAccountReturnToken(accountPrincipal.getUsername());
+        if(account.getRol().name() == Role.ADMIN.name()){
+            return ResponseEntity.ok(accountService.findAllAccountList());
+        }else {
+            return ResponseEntity.badRequest().body("you don't have permission");
+        }
+    }
     @GetMapping("/verify/{verificationCode}")
     public ResponseEntity<?> verifyAccount(@PathVariable String verificationCode) {
         try {

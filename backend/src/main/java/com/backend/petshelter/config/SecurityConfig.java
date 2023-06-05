@@ -54,7 +54,8 @@ public class SecurityConfig {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.authorizeHttpRequests()
-                .requestMatchers(HttpMethod.PUT,"/api/account/change/**").hasRole(Role.ADMIN.name())
+                .requestMatchers(HttpMethod.PUT,"/api/account/change/**","api/account/findallcustomerlist").hasRole(Role.ADMIN.name())
+                .requestMatchers(HttpMethod.PUT, "/api/account/updateAccount/**").hasRole(Role.USER.name())
                 .requestMatchers("/api/authentication/sign-in",
                         "/api/authentication/sign-up",
                         "/swagger-ui/**",
