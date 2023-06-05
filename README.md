@@ -66,7 +66,7 @@ El equipo detrás de Mascota en Casa está conformado por talentosos profesional
 | <img src="https://media.licdn.com/dms/image/D4E03AQEghGZiB9OkCQ/profile-displayphoto-shrink_800_800/0/1675780951559?e=1691625600&v=beta&t=Wz5K_bPn6gyMOzhuqzrh011HNQPqnnLmuuWF2PGr5QE" width=50>|
 |:-:|
 | **Lisseth Higuita**|
-| <a href="#"><img src="https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white"/></a> <a href="https://www.linkedin.com/in/lissethhiguita-disenouxui/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+| <a href="https://www.behance.net/lissethhiguita"><img src="https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white"/></a> <a href="https://www.linkedin.com/in/lissethhiguita-disenouxui/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
 <hr/>
 
