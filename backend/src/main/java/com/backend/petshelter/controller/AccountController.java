@@ -5,12 +5,16 @@ import com.backend.petshelter.model.Account;
 import com.backend.petshelter.security.AccountPrincipal;
 import com.backend.petshelter.service.AccountService;
 import com.backend.petshelter.util.enums.Role;
+import jakarta.mail.MessagingException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.UnsupportedEncodingException;
 
 @RestController
 @RequestMapping("api/account")
@@ -74,6 +78,26 @@ public class AccountController {
             }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred while updating the account" + e.getMessage());
+        }
+    }
+
+    @GetMapping("passwordrecover/{email}")
+    public ResponseEntity<?> passwordRecovery(@PathVariable String email) {
+        try {
+            if (email == null || email.isEmpty()) {
+                return ResponseEntity.badRequest().body("Email can't be empty");
+            }
+            Account buscarEmail = accountService.findByEmail(email)
+                    .orElseThrow(() -> new UsernameNotFoundException("This account does not exist." + email));
+
+            accountService.sendPasswordRecoveryToEmail(buscarEmail);
+            return ResponseEntity.ok("Password recovery email sent successfully");
+
+        } catch (MessagingException | UnsupportedEncodingException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred while sending the password recovery email");
+        } catch (Exception e) {
+            String safeErrorMessage = "Error while recovery. Please check email format";
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(safeErrorMessage);
         }
     }
 }
