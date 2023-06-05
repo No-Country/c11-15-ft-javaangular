@@ -75,7 +75,7 @@ El equipo detrás de Mascota en Casa está conformado por talentosos profesional
 | <img src="https://media.licdn.com/dms/image/D4D03AQGq53_8g9a-UA/profile-displayphoto-shrink_800_800/0/1669411534931?e=1691625600&v=beta&t=bQiUCcIAz0yfA1-eXBHHClQTvfe3K1VKSTgFqO0kNyE" width=50>|
 |:-:|
 | **Diego Salcedo**| 
-| <a href="#"><img src="https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white"/></a> <a href="https://www.linkedin.com/in/diego-salcedo-18908119a/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+|<a href="https://www.linkedin.com/in/diego-salcedo-18908119a/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
 ## Plan de pruebas.
 
