@@ -8,6 +8,9 @@ export interface User {
 
 export interface CreateUser extends Omit<User, 'id'> {}
 
+export interface RecoverUser extends Omit<User, 'id' | 'password' | 'accountDetails'> {}
+
+export interface PasswordUser extends Omit<User, 'id' | 'accountDetails'> {}
 
 export interface AccountDetails {
   fullName: string

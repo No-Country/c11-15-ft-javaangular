@@ -14,6 +14,8 @@ import { AuthGuard } from '../guards/auth.guard';
 import { FormComponent } from './pages/form/form.component';
 import { FormInfoComponent } from './pages/form-info/form-info.component';
 import { AutenticacionComponent } from './pages/autenticacion/autenticacion.component';
+import { RecorpasswordComponent } from './pages/recorpassword/recorpassword.component';
+import { ChangepasswordComponent } from './pages/changepassword/changepassword.component';
 
 const routes: Routes = [
   {
@@ -83,7 +85,19 @@ const routes: Routes = [
     title: 'register user',
   },
   {
-    path: 'authentication/:clave',
+    path: 'recoverypassword',
+    component: RecorpasswordComponent,
+    pathMatch: 'full',
+    title: 'recoverypassword',
+  },
+  {
+    path: 'changepassword/:correo',
+    component: ChangepasswordComponent,
+    pathMatch: 'full',
+    title: 'changepassword',
+  },
+  {
+    path: 'verify/:codeVerification',
     component: AutenticacionComponent,
     pathMatch: 'full',
     title: 'Verification',

@@ -1,9 +1,14 @@
-<!-- https://play.tailwindcss.com/PLrIiZQn2n -->
-
-<div class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden py-6 sm:py-12 bg-white">
-  <div class="max-w-xl px-5 text-center">
-    <h2 class="mb-2 text-[42px] font-bold text-zinc-800">Check your inbox</h2>
-    <p class="mb-2 text-lg text-zinc-500">We are glad, that you’re with us ? We’ve sent you a verification link to the email address <span class="font-medium text-indigo-500">mail@yourdomain.com</span>.</p>
-    <a class="mt-3 inline-block w-96 rounded bg-indigo-600 px-5 py-3 font-medium text-white shadow-md shadow-indigo-500/20 hover:bg-indigo-700">Open the App →</a>
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-[#FDFAF3]">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <img class="mx-auto h-30 w-auto" src="../../../assets/images/logo2.png" alt="Your Company">
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-[#00A19D]">La cuenta ya ha sido verificada</h2>
+  </div>
+  <!-- formulario -->
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <p class="mt-10 text-center text-sm text-gray-500">
+      Ya estas registrado
+      <a [routerLink]="['/login']" class="font-semibold leading-6 text-[#FFB344] hover:text-indigo-500">Iniciar
+        sesion</a>
+    </p>
   </div>
 </div>

@@ -24,6 +24,8 @@ import { FormComponent } from './pages/form/form.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormInfoComponent } from './pages/form-info/form-info.component';
 import { AutenticacionComponent } from './pages/autenticacion/autenticacion.component';
+import { RecorpasswordComponent } from './pages/recorpassword/recorpassword.component';
+import { ChangepasswordComponent } from './pages/changepassword/changepassword.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { AutenticacionComponent } from './pages/autenticacion/autenticacion.comp
     FormComponent,
     FooterComponent,
     FormInfoComponent,
-    AutenticacionComponent
+    AutenticacionComponent,
+    RecorpasswordComponent,
+    ChangepasswordComponent
   ],
   imports: [
     CommonModule,

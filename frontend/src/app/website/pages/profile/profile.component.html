@@ -3,4 +3,33 @@
   <p>Email: {{ user.email }}</p>
   <p>{{ user.accountDetails.fullName }}</p>
   <!-- <p>Rol: {{ user?.role }}</p> -->
+  <ng-container *ngFor="let dto of data">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+      <img class="w-full" [src]='dto.fotos[0]' alt="Sunset in the mountains">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">{{ dto.nombre }}</div>
+        <p class="text-gray-700 text-base">
+          {{ dto.descripcion }}
+        </p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <span class="inline-block bg-gray-200 rounded-full px-4 py-2 text-sm font-semibold text-gray-700 mr-4 mb-4">{{
+          dto.cuidados }}</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+          <p class="bg-gray-200 m-0 p-0 rounded-full"><strong class="bg-gray-200 m-0 p-0" *ngIf="dto.vacunado === true; else second">
+              si</strong><ng-template #second><strong class="bg-gray-200 m-0 p-0">no</strong></ng-template> estoy
+            vacunado</p>
+          <p><strong *ngIf="dto.esterilizado === true; else second">
+              si</strong><ng-template #second><strong>no</strong></ng-template> estoy
+            esterilizado</p>
+          <p><strong *ngIf="dto.desparacitado === true; else second">
+              si</strong><ng-template #second><strong>no</strong></ng-template> estoy
+            desparacitado</p>
+        </span>
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+      </div>
+    </div>
+  </ng-container>
+
 </div>

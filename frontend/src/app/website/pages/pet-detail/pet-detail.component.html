@@ -21,7 +21,7 @@
       <p class="text-justify text-amber-800">{{ mascota.localidad }}</p>
       <h2>Acuerdate de mi cumpleaños! yo naci el:</h2>
       <p class="animate-pulse text-blue-700"><strong>{{ mascota.fechaDeNacimiento | date:'mediumDate' }}</strong></p>
-      <h2>mi nivel de actividad es:</h2>
+      <h2>mi nivel de actividad es: {{ mascota.nivelActividad }}</h2>
       <ng-container [ngSwitch]="true">
         <p *ngSwitchCase="mascota.nivelActividad === 'BAJO' " class="text-justify text-amber-800">De solo -20 min de
           ejercicio</p>

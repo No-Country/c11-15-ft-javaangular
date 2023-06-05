@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -6,9 +7,18 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './autenticacion.component.html',
   styleUrls: ['./autenticacion.component.css']
 })
-export class AutenticacionComponent {
+export class AutenticacionComponent implements OnInit {
 
-  constructor( private route: ActivatedRoute){
-    console.log(this.route.snapshot.paramMap.get('clave'))
+  data: string | null;
+  constructor(
+    private route: ActivatedRoute,
+    private usersService: UsersService
+    ){
+    this.data = this.route.snapshot.paramMap.get('codeVerification');
   }
+
+  ngOnInit(): void {
+    this.usersService.activacion(this.data);
+  }
+
 }
