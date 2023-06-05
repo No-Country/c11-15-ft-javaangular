@@ -10,6 +10,7 @@ import com.backend.petshelter.model.Phones;
 import com.backend.petshelter.repository.AccountRepository;
 import com.backend.petshelter.security.jwt.JwtProvider;
 import com.backend.petshelter.service.AccountService;
+import com.backend.petshelter.util.converter.AccountConverter;
 import com.backend.petshelter.util.enums.IdentificationType;
 import com.backend.petshelter.util.enums.PhoneLabel;
 import com.backend.petshelter.util.enums.Role;
@@ -39,6 +40,8 @@ public class AccountServiceImpl implements AccountService {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private JwtProvider jwtProvider;
+    @Autowired
+    AccountConverter accountConverter;
     @Autowired
     private JavaMailSender javaMailSender;
     @Value("${spring.mail.username}")
@@ -76,7 +79,13 @@ public class AccountServiceImpl implements AccountService {
             throw new RuntimeException("Error creating account: " + e.getMessage());
         }
     }
+    @Override
+    public List<AccountDTO> findAllAccountList(){
+        List<Account> findAll = accountRepository.findAll();
 
+        return accountConverter.entityToDto(findAll);
+
+    }
     @Override
     public void sendVerificationCodeToEmail(Account account) throws MessagingException, UnsupportedEncodingException {
 
