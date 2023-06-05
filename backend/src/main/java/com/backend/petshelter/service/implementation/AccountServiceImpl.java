@@ -10,6 +10,7 @@ import com.backend.petshelter.model.Phones;
 import com.backend.petshelter.repository.AccountRepository;
 import com.backend.petshelter.security.jwt.JwtProvider;
 import com.backend.petshelter.service.AccountService;
+import com.backend.petshelter.util.converter.AccountConverter;
 import com.backend.petshelter.util.enums.IdentificationType;
 import com.backend.petshelter.util.enums.PhoneLabel;
 import com.backend.petshelter.util.enums.Role;
@@ -39,6 +40,8 @@ public class AccountServiceImpl implements AccountService {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private JwtProvider jwtProvider;
+    @Autowired
+    AccountConverter accountConverter;
     @Autowired
     private JavaMailSender javaMailSender;
     @Value("${spring.mail.username}")
@@ -76,7 +79,13 @@ public class AccountServiceImpl implements AccountService {
             throw new RuntimeException("Error creating account: " + e.getMessage());
         }
     }
+    @Override
+    public List<AccountDTO> findAllAccountList(){
+        List<Account> findAll = accountRepository.findAll();
 
+        return accountConverter.entityToDto(findAll);
+
+    }
     @Override
     public void sendVerificationCodeToEmail(Account account) throws MessagingException, UnsupportedEncodingException {
 
@@ -107,7 +116,7 @@ public class AccountServiceImpl implements AccountService {
         mailContent += "<p>Dear " + account.getAccountDetails().getFullName() + ",</p>";
         mailContent += "<p> Please click the link below to verify to your registration:</p>";
 
-        String verifyURL = "/verify?code=" + account.getVerificationCode();
+        String verifyURL = baseUrl + "/verify/" + account.getVerificationCode();
         mailContent += "<h3><a href=\"" + verifyURL + "\" target=_blank >Click to verify your account</a></h3>";
 
         mailContent += "<p> Thank you <br>The Mascota en Casa Team </p>";
@@ -122,7 +131,50 @@ public class AccountServiceImpl implements AccountService {
 
         javaMailSender.send(message);
     }
+    @Override
+    public void sendPasswordRecoveryToEmail(Account account) throws MessagingException, UnsupportedEncodingException {
 
+        String subject = "Password recovery by Mascota en Casa Team";
+        String senderName = "Mascota en Casa Team";
+        String mailContent = "<head>";
+        mailContent += "<style>";
+        mailContent += "a{";
+        mailContent += "display: block;";
+        mailContent += "width: 200px;";
+        mailContent += "font-family: Arial, Helvetica, sans-serif;";
+        mailContent += "font-weight: 700;";
+        mailContent += "color: #FFB344;";
+        mailContent += "background-color: #00A19D;";
+        mailContent += "border-radius: 10px;";
+        mailContent += "padding: 15px 30px;";
+        mailContent += "margin: 20px 20px;";
+        mailContent += "text-align: center;";
+        mailContent += "text-decoration: none;";
+        mailContent += "}";
+        mailContent += "a:hover{";
+        mailContent += "background-color: #FFB344;";
+        mailContent += "border: 2px solid #00A19D;";
+        mailContent += "color: #00A19D;";
+        mailContent += "}";
+        mailContent += "</style>";
+        mailContent += "</head>";
+        mailContent += "<p>Dear " + account.getAccountDetails().getFullName() + ",</p>";
+
+        String verifyURL = baseUrl + "/changepassword/" + account.getEmail();
+        mailContent += "<h3><a href=\"" + verifyURL + "\" target=_blank >Click for change password</a></h3>";
+
+        mailContent += "<p> Thank you <br>The Mascota en Casa Team </p>";
+
+        MimeMessage message = javaMailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message);
+
+        helper.setFrom(emailFrom, senderName);
+        helper.setTo(account.getEmail());
+        helper.setSubject(subject);
+        helper.setText(mailContent, true);
+
+        javaMailSender.send(message);
+    }
     @Override
     public Optional<Account> findByEmail(String email) {
         try {

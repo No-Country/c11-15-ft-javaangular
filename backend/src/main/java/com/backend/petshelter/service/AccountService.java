@@ -8,12 +8,17 @@ import jakarta.mail.MessagingException;
 import jakarta.transaction.Transactional;
 
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 import java.util.Optional;
 
 public interface AccountService {
     AccountRegistration createAccountUserRol(Account account);
 
+    List<AccountDTO> findAllAccountList();
+
     void sendVerificationCodeToEmail(Account account) throws MessagingException, UnsupportedEncodingException;
+
+    void sendPasswordRecoveryToEmail(Account account) throws MessagingException, UnsupportedEncodingException;
 
     Optional<Account> findByEmail(String email);
 
