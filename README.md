@@ -8,7 +8,7 @@ El equipo detrás de Mascota en Casa está conformado por talentosos profesional
 
 ### ⚡ Links del Proyecto:
 
-<h3><a href="https://www.figma.com/file/aYon5R5ryIkeNFeOVFIrqM/No-country---Wireframes?type=design&node-id=0-1&t=xnb1TCtnGFhKKKwX-0"> <img src="https://img.shields.io/badge/Figma-%23F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white"/></a> <a href="https://mascotasencasa-eb90d.web.app/"> <img src="[https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AFirebase_Logo.png&psig=AOvVaw2Bandm-y8MwRyffVApej3q&ust=1686059804952000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCLDAlZykrP8CFQAAAAAdAAAAABAD](https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Firebase_Logo.svg/1280px-Firebase_Logo.svg.png)"/></a></h3>
+<h3><a href="https://www.figma.com/file/aYon5R5ryIkeNFeOVFIrqM/No-country---Wireframes?type=design&node-id=0-1&t=xnb1TCtnGFhKKKwX-0"> <img src="https://img.shields.io/badge/Figma-%23F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white"/></a> <a href="https://mascotasencasa-eb90d.web.app/"> <img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-built_white.png?hl=es-419"/></a></h3>
 
 ## Plan de pruebas.
 
