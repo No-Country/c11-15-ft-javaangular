@@ -2,6 +2,14 @@
 
 Este repositorio contiene el código fuente y la documentación relacionada con el proyecto c11-15-ft-javaangular.
 
+## Colaboradores 👥
+
+El equipo detrás de Mascota en Casa está conformado por talentosos profesionales dedicados a ofrecer la mejor experiencia posible a nuestros usuarios:
+
+### ⚡ Links del Proyecto:
+
+<h3><a href="https://www.figma.com/file/aYon5R5ryIkeNFeOVFIrqM/No-country---Wireframes?type=design&node-id=0-1&t=xnb1TCtnGFhKKKwX-0"> <img src="https://img.shields.io/badge/Figma-%23F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white"/></a> <a href="https://mascotasencasa-eb90d.web.app/"> <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AFirebase_Logo.png&psig=AOvVaw2Bandm-y8MwRyffVApej3q&ust=1686059804952000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCLDAlZykrP8CFQAAAAAdAAAAABAD"/></a></h3>
+
 ## Plan de pruebas.
 
 Puedes encontrar el plan de pruebas en el siguiente enlace: [Plan de pruebas](https://trello.com/c/HWnAGZn6)
