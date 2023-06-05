@@ -35,7 +35,7 @@ public class AccountController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
-    @GetMapping("findallcustomerlist")
+    @GetMapping("findallaccountlist")
     public ResponseEntity<?> getAllUsersDetails(@AuthenticationPrincipal AccountPrincipal accountPrincipal){
         Account account = accountService.findByAccountReturnToken(accountPrincipal.getUsername());
         if(account.getRol().name() == Role.ADMIN.name()){
