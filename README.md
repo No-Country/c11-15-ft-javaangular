@@ -50,9 +50,33 @@ El equipo detrás de Mascota en Casa está conformado por talentosos profesional
 | <img src="https://media.licdn.com/dms/image/D4E03AQGfAu3Acv7-xg/profile-displayphoto-shrink_800_800/0/1679235835959?e=1691625600&v=beta&t=5YVBHZit1Qu38GqLioQo0MdU7FERG1w8zT0ZICWRzYE" width=50>| <img src="https://media.licdn.com/dms/image/D4D03AQHWH4Q7zclgnw/profile-displayphoto-shrink_800_800/0/1678309544307?e=1691625600&v=beta&t=XVs8wm00zZ-Iq-hzoJhisMTaDZa0avpPjAQ3WVIZNpQ" width=50>|
 |:-:|:-:|
 | **Alfonso Almonte**| **Diego Villán**| 
-| <a href="https://github.com/j3v1t0"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/alfonso-almonte-a7640485/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="#"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="#"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | 
+| <a href="https://github.com/j3v1t0"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/alfonso-almonte-a7640485/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/Nahuel409"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/diegovillan/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | 
 
 <hr/>
+
+### 🎨 UX/UI:
+
+#### 🛠️ Tech Stack:
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white)
+![Adobe Color](https://img.shields.io/badge/Adobe_Color-FF0000?style=for-the-badge&logo=Adobe-Color&logoColor=white)
+![Figjam](https://img.shields.io/badge/Figjam-F0E3FF?style=for-the-badge&logo=Figjam&logoColor=white)
+
+#### 🧑‍💻 Designers:
+
+| <img src="https://media.licdn.com/dms/image/D4E03AQEghGZiB9OkCQ/profile-displayphoto-shrink_800_800/0/1675780951559?e=1691625600&v=beta&t=Wz5K_bPn6gyMOzhuqzrh011HNQPqnnLmuuWF2PGr5QE" width=50>|
+|:-:|
+| **Lisseth Higuita**|
+| <a href="#"><img src="https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white"/></a> <a href="https://www.linkedin.com/in/lissethhiguita-disenouxui/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+
+<hr/>
+
+#### 🧑‍💻 QA Testers:
+
+| <img src="https://media.licdn.com/dms/image/D4D03AQGq53_8g9a-UA/profile-displayphoto-shrink_800_800/0/1669411534931?e=1691625600&v=beta&t=bQiUCcIAz0yfA1-eXBHHClQTvfe3K1VKSTgFqO0kNyE" width=50>|
+|:-:|
+| **Diego Salcedo**| 
+| <a href="#"><img src="https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white"/></a> <a href="https://www.linkedin.com/in/diego-salcedo-18908119a/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+
 ## Plan de pruebas.
 
 Puedes encontrar el plan de pruebas en el siguiente enlace: [Plan de pruebas](https://trello.com/c/HWnAGZn6)
