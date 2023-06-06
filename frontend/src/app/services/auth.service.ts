@@ -48,4 +48,8 @@ export class AuthService {
   logout() {
     this.tokenService.removeToken();
   }
+
+  listUser() {
+    return this.http.get<any>(`${this.apiUrl}/account/findallaccountlist`);
+  }
 }
