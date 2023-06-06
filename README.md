@@ -40,6 +40,8 @@ El equipo detrás de Mascota en Casa está conformado por talentosos profesional
 ![Lombok](https://img.shields.io/badge/Lombok-red?style=for-the-badge)
 ![PostgreSQL](https://img.shields.io/badge/postgresql-ffffff?style=for-the-badge&logo=postgresql&logoColor=008bb9)
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)
+![Postman](https://img.shields.io/badge/postman-white?style=for-the-badge&logo=postman&logoColor=orange)
+![Insomnia](https://img.shields.io/badge/Insomnia-white?style=for-the-badge&logo=insomnia&logoColor=purple)
 ![SWAGGER](https://img.shields.io/badge/swagger-6DB33F?style=for-the-badge&logo=swagger&logoColor=white)
 ![Railway](https://img.shields.io/badge/Railway-ffffff?style=for-the-badge&logo=Railway&logoColor=000000)
 
@@ -70,6 +72,14 @@ El equipo detrás de Mascota en Casa está conformado por talentosos profesional
 | <a href="https://www.behance.net/lissethhiguita"><img src="https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white"/></a> <a href="https://www.linkedin.com/in/lissethhiguita-disenouxui/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
 <hr/>
+
+### 🔎🐞 TESTING:
+
+#### 🛠️ Tech Stack:
+![JMeter](https://img.shields.io/badge/apache_jmeter-white?style=for-the-badge&logo=apache-jmeter&logoColor=F24E1E)
+![TestLink](https://img.shields.io/badge/TestLink-yellow?style=for-the-badge&logo=apache-testlink&logoColor=F24E1E)
+![Trello](https://img.shields.io/badge/trello-blue?style=for-the-badge&logo=trello&logoColor=white)
+![Postman](https://img.shields.io/badge/postman-white?style=for-the-badge&logo=postman&logoColor=orange)
 
 #### 🧑‍💻 QA Testers:
 
