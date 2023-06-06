@@ -71,6 +71,8 @@ El equipo detrás de Mascota en Casa está conformado por talentosos profesional
 
 <hr/>
 
+### 🔎🐞 TESTING:
+
 #### 🧑‍💻 QA Testers:
 
 | <img src="https://media.licdn.com/dms/image/D4D03AQGq53_8g9a-UA/profile-displayphoto-shrink_800_800/0/1669411534931?e=1691625600&v=beta&t=bQiUCcIAz0yfA1-eXBHHClQTvfe3K1VKSTgFqO0kNyE" width=50>|
