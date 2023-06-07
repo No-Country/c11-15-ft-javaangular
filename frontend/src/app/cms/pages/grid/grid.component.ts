@@ -7,12 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent {
+
+  usuario: any[] = []
+
   constructor(
     private authService: AuthService
   ) {
     this.authService.listUser()
-    .subscribe(user =>
-      console.log(user)
+    .subscribe(user => {
+      this.usuario = user
+      console.log(this.usuario)
+    }
       );
   }
 

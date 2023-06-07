@@ -1,1 +1,43 @@
-<p>grid works!</p>
+<div class="mx-auto max-w-screen-lg px-4 py-8 sm:px-8">
+  <div class="flex items-center justify-between pb-6">
+    <div>
+      <h2 class="font-semibold">Lista de usuarios</h2>
+      <span class="text-xs text-gray-500">Cuentas de usuarios registrados</span>
+    </div>
+  </div>
+  <div class="overflow-y-hidden rounded-lg border">
+    <div class="overflow-x-auto">
+      <table class="w-full">
+        <thead>
+          <tr class="bg-blue-600 text-left text-xs font-semibold uppercase tracking-widest text-black">
+            <th class="px-5 py-3">ID</th>
+            <th class="px-5 py-3">Nombre Completo</th>
+            <th class="px-5 py-3">Rol del Usuario</th>
+            <th class="px-5 py-3">Correo</th>
+          </tr>
+        </thead>
+        <tbody class="text-black" *ngFor="let user of usuario; let i = index">
+          <tr>
+            <td class="border-b border-black bg-white px-5 py-5 text-sm">
+              <p class="whitespace-no-wrap">{{ i + 1 }}</p>
+            </td>
+            <td class="border-b border-black bg-white px-5 py-5 text-sm">
+              <div class="flex items-center">
+                <div class="ml-3">
+                  <p class="whitespace-no-wrap">{{ user.accountDetails.fullName }}</p>
+                </div>
+              </div>
+            </td>
+            <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+              <p class="whitespace-no-wrap">{{ user.rol }}</p>
+            </td>
+            <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm">
+              <p class="whitespace-no-wrap">{{ user.email }}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
