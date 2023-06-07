@@ -120,4 +120,4 @@ Puedes acceder a la Test Suite del módulo Cuenta/Perfil de Usuario en el siguie
 
 ## Reporte de Testing
 Puedes acceder al Reporte de Testing y al Checklist de los Casos de Prueba en los siguientes enlaces:
-[Reporte de Testing](https://trello.com/c/VERfzsbR) [CheckList](https://docs.google.com/spreadsheets/d/1YIIaVuOHXk5yqqvdJDZ6d_iyTZBKCtPCyBCc9p8IpV4/edit?usp=sharing)
+[Reporte de Testing](https://trello.com/c/VERfzsbR) <-> [CheckList](https://docs.google.com/spreadsheets/d/1YIIaVuOHXk5yqqvdJDZ6d_iyTZBKCtPCyBCc9p8IpV4/edit?usp=sharing)
