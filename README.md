@@ -119,5 +119,5 @@ Puedes acceder a la Test Suite del módulo Formulario Dar En Adopción en el sig
 Puedes acceder a la Test Suite del módulo Cuenta/Perfil de Usuario en el siguiente enlace: [Test Suite Cuenta/Perfil de Usuario](https://docs.google.com/spreadsheets/d/1WbMYMdKxC2GHnHV7qeG6MHwbazyDvgS5LH8E88fLHBs/edit?usp=sharing)
 
 ## Reporte de Testing
-Puedes acceder al Reporte de Testing en el siguiente enlace:
-[Reporte de Testing](https://trello.com/c/VERfzsbR)
+Puedes acceder al Reporte de Testing y al Checklist de los Casos de Prueba en los siguientes enlaces:
+[Reporte de Testing](https://trello.com/c/VERfzsbR) [CheckList](https://docs.google.com/spreadsheets/d/1YIIaVuOHXk5yqqvdJDZ6d_iyTZBKCtPCyBCc9p8IpV4/edit?usp=sharing)
