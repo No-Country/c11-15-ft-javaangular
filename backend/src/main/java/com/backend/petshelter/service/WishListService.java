@@ -11,7 +11,7 @@ public interface WishListService {
     @Transactional
     WishListDTO addToWishList(String email, Long petId);
 
-    void petExist(Account account, Pet pet);
+    boolean petExist(Account account, Pet pet);
 
     List<WishListDTO> getWishListByEmail(String email);
 }

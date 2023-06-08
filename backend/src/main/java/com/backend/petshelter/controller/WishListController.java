@@ -31,12 +31,16 @@ public class WishListController {
 
             Pet pet = petService.obtenerMascotaId(petId)
                     .orElseThrow(() -> new RuntimeException("Pet not found for the provided ID." + petId));
-            wishListService.petExist(account, pet);
-            WishListDTO wishListDTO = wishListService.addToWishList(email, petId);
+            boolean exist = wishListService.petExist(account, pet);
+            if (exist == true){
+                WishListDTO wishListDTO = wishListService.addToWishList(email, petId);
+                return ResponseEntity.ok(wishListDTO);
+            }else {
+                return ResponseEntity.badRequest().body("The pet already exists in the wishlist.");
+            }
 
-            return ResponseEntity.ok(wishListDTO);
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body("The pet already exists in the wishlist.");
+            return ResponseEntity.badRequest().body("Error request");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
