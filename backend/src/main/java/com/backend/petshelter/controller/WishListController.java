@@ -31,9 +31,9 @@ public class WishListController {
 
             Pet pet = petService.obtenerMascotaId(petId)
                     .orElseThrow(() -> new RuntimeException("Pet not found for the provided ID." + petId));
-
-            WishListDTO wishListDTO = wishListService.addToWishList(email, petId);
             wishListService.petExist(account, pet);
+            WishListDTO wishListDTO = wishListService.addToWishList(email, petId);
+
             return ResponseEntity.ok(wishListDTO);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body("The pet already exists in the wishlist.");
