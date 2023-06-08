@@ -56,14 +56,14 @@ public class SecurityConfig {
         http.authorizeHttpRequests()
                 .requestMatchers(HttpMethod.PUT,"/api/account/change/**","api/account/findallcustomerlist").hasRole(Role.ADMIN.name())
                 .requestMatchers(HttpMethod.PUT, "/api/account/updateAccount/**").hasRole(Role.USER.name())
+                .requestMatchers(HttpMethod.POST,"api/wishlist/**").hasRole(Role.USER.name())
                 .requestMatchers("/api/authentication/sign-in",
                         "/api/authentication/sign-up",
                         "/swagger-ui/**",
                         "/v3/**",
                         "/api/account/updateAccount/**",
                         "/pet/**",
-                        "/api/account/verify/**",
-                        "api/wishlist/**"
+                        "/api/account/verify/**"
                 ).permitAll()
                 .anyRequest().authenticated();
 
