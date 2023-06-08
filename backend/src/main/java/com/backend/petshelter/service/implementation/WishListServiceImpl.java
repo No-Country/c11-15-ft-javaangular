@@ -59,6 +59,14 @@ public class WishListServiceImpl implements WishListService {
     }
 
     @Override
+    public void petExist(Account account, Pet pet) {
+
+        boolean petExistsInWishlist = wishListRepository.existsByAccountAndPet(account, pet);
+        if (petExistsInWishlist) {
+            throw new IllegalArgumentException("The pet already exists in the wishlist.");
+        }
+    }
+    @Override
     public List<WishListDTO> getWishListByEmail(String email) {
         Optional<Account> accountOptional = accountRepository.findByEmail(email);
         if (accountOptional.isEmpty()) {
